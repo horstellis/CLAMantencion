@@ -27,6 +27,7 @@ namespace MantencionCLA
         private static frm_mant_foraneo linea;
         private static frm_mant_responsable responsable;
         private static frm_mant_articulos articulos;
+        private static frm_mantencion mantencion;
 
         public static frm_login getInicio()
         {
@@ -206,6 +207,16 @@ namespace MantencionCLA
         public static void setArticulos(frm_mant_articulos articulos)
         {
             util.articulos = articulos;
+        }
+
+        public static frm_mantencion getMantencion()
+        {
+            return mantencion;
+        }
+
+        public static void setMantencion(frm_mantencion mantencion)
+        {
+            util.mantencion = mantencion;
         }
     }
 }

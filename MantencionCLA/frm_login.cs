@@ -86,12 +86,20 @@ namespace MantencionCLA
                         {
                             if (txt_password.Text.Trim().Equals(clave))
                             {
-                                aux.dialogo("Bienvenido " + nombre, this.Text, 2);
-                                util.setInicio(this);
-                                util.setMenu(new frm_principal());
-                                util.getMenu().setIdPermiso(permiso);
-                                util.getMenu().Show();
-                                this.Hide();
+                                int exec = sql.ejecutar("UPDATE usuarios SET intentos_sesion = 0 WHERE usuario = '" + txt_usuario.Text.Trim() + "'");
+                                if (exec > 0)
+                                {
+                                    aux.dialogo("Bienvenido " + nombre, this.Text, 2);
+                                    util.setInicio(this);
+                                    util.setMenu(new frm_principal());
+                                    util.getMenu().setIdPermiso(permiso);
+                                    util.getMenu().Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    aux.dialogo("Error al procesar ingreso\nIntente nuevamente", this.Text, 3);
+                                }
                             }
                             else
                             {

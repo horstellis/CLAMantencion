@@ -190,7 +190,7 @@
             this.mnu_mant_usuarios.Name = "mnu_mant_usuarios";
             this.mnu_mant_usuarios.Size = new System.Drawing.Size(224, 22);
             this.mnu_mant_usuarios.Text = "Usuarios";
-            this.mnu_mant_usuarios.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            this.mnu_mant_usuarios.Click += new System.EventHandler(this.mnu_mant_usuarios_Click);
             // 
             // mnu_mant_especiales
             // 
@@ -252,6 +252,7 @@
             this.mnu_ingreso_mantencion.Name = "mnu_ingreso_mantencion";
             this.mnu_ingreso_mantencion.Size = new System.Drawing.Size(152, 22);
             this.mnu_ingreso_mantencion.Text = "Mantención";
+            this.mnu_ingreso_mantencion.Click += new System.EventHandler(this.mnu_ingreso_mantencion_Click);
             // 
             // mnu_reportes
             // 
@@ -312,7 +313,7 @@
             this.mnu_salir.Name = "mnu_salir";
             this.mnu_salir.Size = new System.Drawing.Size(41, 20);
             this.mnu_salir.Text = "&Salir";
-            this.mnu_salir.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.mnu_salir.Click += new System.EventHandler(this.mnu_salir_Click);
             // 
             // frm_principal
             // 
@@ -326,6 +327,7 @@
             this.Name = "frm_principal";
             this.Text = "Programa de Mantenimiento";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_principal_FormClosing);
             this.Load += new System.EventHandler(this.frm_principal_Load);
             this.mnu.ResumeLayout(false);
             this.mnu.PerformLayout();

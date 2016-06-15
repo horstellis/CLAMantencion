@@ -17,19 +17,15 @@ namespace MantencionCLA
             InitializeComponent();
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void frm_mantencion_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void frm_mantencion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            util.setMantencion(null);
+            this.Dispose();
         }
     }
 }

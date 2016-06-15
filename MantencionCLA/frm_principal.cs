@@ -31,7 +31,7 @@ namespace MantencionCLA
             this.id_permiso = id_permiso;
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnu_salir_Click(object sender, EventArgs e)
         {
             if (aux.dialogo("¿Desea salir del sistema?", this.Text, 1) == DialogResult.Yes)
             {
@@ -39,7 +39,7 @@ namespace MantencionCLA
             }
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnu_mant_usuarios_Click(object sender, EventArgs e)
         {   
             frm_mant_usuarios form = new frm_mant_usuarios();
             form.MdiParent = this;
@@ -363,6 +363,26 @@ namespace MantencionCLA
             {
                 util.getArticulos().Activate();
             }
+        }
+
+        private void mnu_ingreso_mantencion_Click(object sender, EventArgs e)
+        {
+            if (util.getMantencion() == null)
+            {
+                util.setMenu(this);
+                util.setMantencion(new frm_mantencion());
+                util.getMantencion().MdiParent = this;
+                util.getMantencion().Show();
+            }
+            else
+            {
+                util.getMantencion().Activate();
+            }
+        }
+
+        private void frm_principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mnu_salir.PerformClick();
         }
 
     }
