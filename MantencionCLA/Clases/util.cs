@@ -1,0 +1,211 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MantencionCLA
+{
+    class util
+    {
+        private static frm_login inicio;
+        private static frm_principal menu;
+        private static frm_activa_usuario activar;
+        private static frm_solicitud solicitud;
+        private static frm_mant_usuarios usuarios;
+        private static frm_mant_basico asignacion;
+        private static frm_mant_basico estado;
+        private static frm_mant_basico tipo_articulo;
+        private static frm_mant_basico permiso;
+        private static frm_mant_basico clasificacion;
+        private static frm_mant_basico solicitante;
+        private static frm_mant_basico seccion;
+        private static frm_mant_basico estado_mantencion;
+        private static frm_mant_basico cargo;
+        private static frm_mant_foraneo maquina;
+        private static frm_mant_foraneo linea;
+        private static frm_mant_responsable responsable;
+        private static frm_mant_articulos articulos;
+
+        public static frm_login getInicio()
+        {
+            return inicio;
+        }
+
+        public static void setInicio(frm_login inicio)
+        {
+            util.inicio = inicio;
+        }
+
+        public static frm_principal getMenu()
+        {
+            return menu;
+        }
+
+        public static void setMenu(frm_principal menu)
+        {
+            util.menu = menu;
+        }
+
+        public static frm_activa_usuario getActivar()
+        {
+            return activar;
+        }
+
+        public static void setActivar(frm_activa_usuario activar)
+        {
+            util.activar = activar;
+        }
+
+        public static frm_solicitud getSolicitud()
+        {
+            return solicitud;
+        }
+
+        public static void setSolicitud(frm_solicitud solicitud)
+        {
+            util.solicitud = solicitud;
+        }
+
+        public static frm_mant_usuarios getUsuarios()
+        {
+            return usuarios;
+        }
+
+        public static void setUsuarios(frm_mant_usuarios usuarios)
+        {
+            util.usuarios = usuarios;
+        }
+
+        public static frm_mant_basico getAsignacion()
+        {
+            return asignacion;
+        }
+
+        public static void setAsignacion(frm_mant_basico asignacion)
+        {
+            util.asignacion = asignacion;
+        }
+
+        public static frm_mant_basico getEstado()
+        {
+            return estado;
+        }
+
+        public static void setEstado(frm_mant_basico estado)
+        {
+            util.estado = estado;
+        }
+
+        public static frm_mant_basico getTipoArticulo()
+        {
+            return tipo_articulo;
+        }
+
+        public static void setTipoArticulo(frm_mant_basico tipo_articulo)
+        {
+            util.tipo_articulo = tipo_articulo;
+        }
+
+        public static frm_mant_basico getPermiso()
+        {
+            return permiso;
+        }
+
+        public static void setPermiso(frm_mant_basico permiso)
+        {
+            util.permiso = permiso;
+        }
+
+        public static frm_mant_basico getClasificacion()
+        {
+            return clasificacion;
+        }
+
+        public static void setClasificacion(frm_mant_basico clasificacion)
+        {
+            util.clasificacion = clasificacion;
+        }
+
+        public static frm_mant_basico getSolicitante()
+        {
+            return solicitante;
+        }
+
+        public static void setSolicitante(frm_mant_basico solicitante)
+        {
+            util.solicitante = solicitante;
+        }
+
+        public static frm_mant_basico getSeccion()
+        {
+            return seccion;
+        }
+
+        public static void setSeccion(frm_mant_basico seccion)
+        {
+            util.seccion = seccion;
+        }
+
+        public static frm_mant_basico getEstadoMantencion()
+        {
+            return estado_mantencion;
+        }
+
+        public static void setEstadoMantencion(frm_mant_basico estado_mantencion)
+        {
+            util.estado_mantencion = estado_mantencion;
+        }
+
+        public static frm_mant_basico getCargo()
+        {
+            return cargo;
+        }
+
+        public static void setCargo(frm_mant_basico cargo)
+        {
+            util.cargo = cargo;
+        }
+
+        public static frm_mant_foraneo getMaquina()
+        {
+            return maquina;
+        }
+
+        public static void setMaquina(frm_mant_foraneo maquina)
+        {
+            util.maquina = maquina;
+        }
+
+        public static frm_mant_foraneo getLinea()
+        {
+            return linea;
+        }
+
+        public static void setLinea(frm_mant_foraneo linea)
+        {
+            util.linea = linea;
+        }
+
+        public static frm_mant_responsable getResponsable()
+        {
+            return responsable;
+        }
+
+        public static void setResponsable(frm_mant_responsable responsable)
+        {
+            util.responsable = responsable;
+        }
+
+        public static frm_mant_articulos getArticulos()
+        {
+            return articulos;
+        }
+
+        public static void setArticulos(frm_mant_articulos articulos)
+        {
+            util.articulos = articulos;
+        }
+    }
+}

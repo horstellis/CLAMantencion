@@ -29,191 +29,306 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_principal));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mantenedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.seccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lineasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.máquinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mecánicosOResponsablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clasificaciónDeMantenciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mantenciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.actividadesEliminadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.foliosUsadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solicitantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.mnu = new System.Windows.Forms.MenuStrip();
+            this.mnu_mant = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_lugares = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_lugares_secciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_lugares_lineas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_lugares_maquinas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_personas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_personas_mecanicos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_personas_cargos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_personas_solicitantes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_partes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_partes_articulos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_partes_tipos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_clasificacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_usuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_especiales = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_especiales_asignacion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_especiales_estado = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_especiales_actividad = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_especiales_permiso = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_ingreso = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_ingreso_actividades = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_ingreso_mantencion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_reportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_reportes_generar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_reportes_buscar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_reportes_divisor = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_reportes_eliminadas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_reportes_folios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_ventanas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_cerrar_sesion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_salir = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // mnu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenedoresToolStripMenuItem,
-            this.ingresoToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.ventanasToolStripMenuItem,
-            this.salirToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(691, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_mant,
+            this.mnu_ingreso,
+            this.mnu_reportes,
+            this.mnu_ventanas,
+            this.mnu_cerrar_sesion,
+            this.mnu_salir});
+            this.mnu.Location = new System.Drawing.Point(0, 0);
+            this.mnu.MdiWindowListItem = this.mnu_ventanas;
+            this.mnu.Name = "mnu";
+            this.mnu.Size = new System.Drawing.Size(691, 24);
+            this.mnu.TabIndex = 0;
+            this.mnu.Text = "menuStrip1";
             // 
-            // mantenedoresToolStripMenuItem
+            // mnu_mant
             // 
-            this.mantenedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.seccionesToolStripMenuItem,
-            this.lineasToolStripMenuItem,
-            this.máquinasToolStripMenuItem,
-            this.solicitantesToolStripMenuItem,
-            this.mecánicosOResponsablesToolStripMenuItem,
-            this.clasificaciónDeMantenciónToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
-            this.mantenedoresToolStripMenuItem.Name = "mantenedoresToolStripMenuItem";
-            this.mantenedoresToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.mantenedoresToolStripMenuItem.Text = "&Mantenedores";
+            this.mnu_mant.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_mant_lugares,
+            this.mnu_mant_personas,
+            this.mnu_mant_partes,
+            this.mnu_mant_clasificacion,
+            this.mnu_mant_usuarios,
+            this.mnu_mant_especiales});
+            this.mnu_mant.Name = "mnu_mant";
+            this.mnu_mant.Size = new System.Drawing.Size(95, 20);
+            this.mnu_mant.Text = "&Mantenedores";
             // 
-            // seccionesToolStripMenuItem
+            // mnu_mant_lugares
             // 
-            this.seccionesToolStripMenuItem.Name = "seccionesToolStripMenuItem";
-            this.seccionesToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.seccionesToolStripMenuItem.Text = "Secciones";
+            this.mnu_mant_lugares.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_mant_lugares_secciones,
+            this.mnu_mant_lugares_lineas,
+            this.mnu_mant_lugares_maquinas});
+            this.mnu_mant_lugares.Name = "mnu_mant_lugares";
+            this.mnu_mant_lugares.Size = new System.Drawing.Size(224, 22);
+            this.mnu_mant_lugares.Text = "Lugares y Equipos";
             // 
-            // lineasToolStripMenuItem
+            // mnu_mant_lugares_secciones
             // 
-            this.lineasToolStripMenuItem.Name = "lineasToolStripMenuItem";
-            this.lineasToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.lineasToolStripMenuItem.Text = "Lineas";
+            this.mnu_mant_lugares_secciones.Name = "mnu_mant_lugares_secciones";
+            this.mnu_mant_lugares_secciones.Size = new System.Drawing.Size(126, 22);
+            this.mnu_mant_lugares_secciones.Text = "Secciones";
+            this.mnu_mant_lugares_secciones.Click += new System.EventHandler(this.mnu_mant_lugares_secciones_Click);
             // 
-            // máquinasToolStripMenuItem
+            // mnu_mant_lugares_lineas
             // 
-            this.máquinasToolStripMenuItem.Name = "máquinasToolStripMenuItem";
-            this.máquinasToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.máquinasToolStripMenuItem.Text = "Máquinas";
+            this.mnu_mant_lugares_lineas.Name = "mnu_mant_lugares_lineas";
+            this.mnu_mant_lugares_lineas.Size = new System.Drawing.Size(126, 22);
+            this.mnu_mant_lugares_lineas.Text = "Lineas";
+            this.mnu_mant_lugares_lineas.Click += new System.EventHandler(this.mnu_mant_lugares_lineas_Click);
             // 
-            // mecánicosOResponsablesToolStripMenuItem
+            // mnu_mant_lugares_maquinas
             // 
-            this.mecánicosOResponsablesToolStripMenuItem.Name = "mecánicosOResponsablesToolStripMenuItem";
-            this.mecánicosOResponsablesToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.mecánicosOResponsablesToolStripMenuItem.Text = "Mecánicos o Responsables";
+            this.mnu_mant_lugares_maquinas.Name = "mnu_mant_lugares_maquinas";
+            this.mnu_mant_lugares_maquinas.Size = new System.Drawing.Size(126, 22);
+            this.mnu_mant_lugares_maquinas.Text = "Máquinas";
+            this.mnu_mant_lugares_maquinas.Click += new System.EventHandler(this.mnu_mant_lugares_maquinas_Click);
             // 
-            // clasificaciónDeMantenciónToolStripMenuItem
+            // mnu_mant_personas
             // 
-            this.clasificaciónDeMantenciónToolStripMenuItem.Name = "clasificaciónDeMantenciónToolStripMenuItem";
-            this.clasificaciónDeMantenciónToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.clasificaciónDeMantenciónToolStripMenuItem.Text = "Clasificación de Mantención";
+            this.mnu_mant_personas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_mant_personas_mecanicos,
+            this.mnu_mant_personas_cargos,
+            this.mnu_mant_personas_solicitantes});
+            this.mnu_mant_personas.Name = "mnu_mant_personas";
+            this.mnu_mant_personas.Size = new System.Drawing.Size(224, 22);
+            this.mnu_mant_personas.Text = "Personas";
             // 
-            // usuariosToolStripMenuItem
+            // mnu_mant_personas_mecanicos
             // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            this.mnu_mant_personas_mecanicos.Name = "mnu_mant_personas_mecanicos";
+            this.mnu_mant_personas_mecanicos.Size = new System.Drawing.Size(214, 22);
+            this.mnu_mant_personas_mecanicos.Text = "Mecánicos y Responsables";
+            this.mnu_mant_personas_mecanicos.Click += new System.EventHandler(this.mnu_mant_personas_mecanicos_Click);
             // 
-            // ingresoToolStripMenuItem
+            // mnu_mant_personas_cargos
             // 
-            this.ingresoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.actividadesToolStripMenuItem,
-            this.mantenciónToolStripMenuItem});
-            this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
-            this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.ingresoToolStripMenuItem.Text = "&Ingreso";
+            this.mnu_mant_personas_cargos.Name = "mnu_mant_personas_cargos";
+            this.mnu_mant_personas_cargos.Size = new System.Drawing.Size(214, 22);
+            this.mnu_mant_personas_cargos.Text = "Cargos";
+            this.mnu_mant_personas_cargos.Click += new System.EventHandler(this.mnu_mant_personas_cargos_Click);
             // 
-            // actividadesToolStripMenuItem
+            // mnu_mant_personas_solicitantes
             // 
-            this.actividadesToolStripMenuItem.Name = "actividadesToolStripMenuItem";
-            this.actividadesToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.actividadesToolStripMenuItem.Text = "Actividades";
+            this.mnu_mant_personas_solicitantes.Name = "mnu_mant_personas_solicitantes";
+            this.mnu_mant_personas_solicitantes.Size = new System.Drawing.Size(214, 22);
+            this.mnu_mant_personas_solicitantes.Text = "Solicitantes";
+            this.mnu_mant_personas_solicitantes.Click += new System.EventHandler(this.mnu_mant_personas_solicitantes_Click);
             // 
-            // mantenciónToolStripMenuItem
+            // mnu_mant_partes
             // 
-            this.mantenciónToolStripMenuItem.Name = "mantenciónToolStripMenuItem";
-            this.mantenciónToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.mantenciónToolStripMenuItem.Text = "Mantención";
+            this.mnu_mant_partes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_mant_partes_articulos,
+            this.mnu_mant_partes_tipos});
+            this.mnu_mant_partes.Name = "mnu_mant_partes";
+            this.mnu_mant_partes.Size = new System.Drawing.Size(224, 22);
+            this.mnu_mant_partes.Text = "Partes y Piezas";
             // 
-            // reportesToolStripMenuItem
+            // mnu_mant_partes_articulos
             // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generarReporteToolStripMenuItem,
-            this.buscarReporteToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.actividadesEliminadasToolStripMenuItem,
-            this.foliosUsadosToolStripMenuItem});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.mnu_mant_partes_articulos.Name = "mnu_mant_partes_articulos";
+            this.mnu_mant_partes_articulos.Size = new System.Drawing.Size(169, 22);
+            this.mnu_mant_partes_articulos.Text = "Articulos";
+            this.mnu_mant_partes_articulos.Click += new System.EventHandler(this.mnu_mant_partes_articulos_Click);
             // 
-            // generarReporteToolStripMenuItem
+            // mnu_mant_partes_tipos
             // 
-            this.generarReporteToolStripMenuItem.Name = "generarReporteToolStripMenuItem";
-            this.generarReporteToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.generarReporteToolStripMenuItem.Text = "Generar Reporte";
+            this.mnu_mant_partes_tipos.Name = "mnu_mant_partes_tipos";
+            this.mnu_mant_partes_tipos.Size = new System.Drawing.Size(169, 22);
+            this.mnu_mant_partes_tipos.Text = "Tipos de Articulos";
+            this.mnu_mant_partes_tipos.Click += new System.EventHandler(this.mnu_mant_partes_tipos_Click);
             // 
-            // buscarReporteToolStripMenuItem
+            // mnu_mant_clasificacion
             // 
-            this.buscarReporteToolStripMenuItem.Name = "buscarReporteToolStripMenuItem";
-            this.buscarReporteToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.buscarReporteToolStripMenuItem.Text = "Buscar Reporte";
+            this.mnu_mant_clasificacion.Name = "mnu_mant_clasificacion";
+            this.mnu_mant_clasificacion.Size = new System.Drawing.Size(224, 22);
+            this.mnu_mant_clasificacion.Text = "Clasificación de Mantención";
+            this.mnu_mant_clasificacion.Click += new System.EventHandler(this.mnu_mant_clasificacion_Click);
             // 
-            // toolStripMenuItem1
+            // mnu_mant_usuarios
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(192, 6);
+            this.mnu_mant_usuarios.Name = "mnu_mant_usuarios";
+            this.mnu_mant_usuarios.Size = new System.Drawing.Size(224, 22);
+            this.mnu_mant_usuarios.Text = "Usuarios";
+            this.mnu_mant_usuarios.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
-            // actividadesEliminadasToolStripMenuItem
+            // mnu_mant_especiales
             // 
-            this.actividadesEliminadasToolStripMenuItem.Name = "actividadesEliminadasToolStripMenuItem";
-            this.actividadesEliminadasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.actividadesEliminadasToolStripMenuItem.Text = "Actividades eliminadas";
+            this.mnu_mant_especiales.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_mant_especiales_asignacion,
+            this.mnu_mant_especiales_estado,
+            this.mnu_mant_especiales_actividad,
+            this.mnu_mant_especiales_permiso});
+            this.mnu_mant_especiales.Name = "mnu_mant_especiales";
+            this.mnu_mant_especiales.Size = new System.Drawing.Size(224, 22);
+            this.mnu_mant_especiales.Text = "Especiales";
             // 
-            // foliosUsadosToolStripMenuItem
+            // mnu_mant_especiales_asignacion
             // 
-            this.foliosUsadosToolStripMenuItem.Name = "foliosUsadosToolStripMenuItem";
-            this.foliosUsadosToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.foliosUsadosToolStripMenuItem.Text = "Folios Usados";
+            this.mnu_mant_especiales_asignacion.Name = "mnu_mant_especiales_asignacion";
+            this.mnu_mant_especiales_asignacion.Size = new System.Drawing.Size(176, 22);
+            this.mnu_mant_especiales_asignacion.Text = "Asignación";
+            this.mnu_mant_especiales_asignacion.Click += new System.EventHandler(this.mnu_mant_especiales_asignacion_Click);
             // 
-            // ventanasToolStripMenuItem
+            // mnu_mant_especiales_estado
             // 
-            this.ventanasToolStripMenuItem.Name = "ventanasToolStripMenuItem";
-            this.ventanasToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.ventanasToolStripMenuItem.Text = "&Ventanas";
+            this.mnu_mant_especiales_estado.Name = "mnu_mant_especiales_estado";
+            this.mnu_mant_especiales_estado.Size = new System.Drawing.Size(176, 22);
+            this.mnu_mant_especiales_estado.Text = "Estado";
+            this.mnu_mant_especiales_estado.Click += new System.EventHandler(this.mnu_mant_especiales_estado_Click);
             // 
-            // salirToolStripMenuItem
+            // mnu_mant_especiales_actividad
             // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "&Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.mnu_mant_especiales_actividad.Name = "mnu_mant_especiales_actividad";
+            this.mnu_mant_especiales_actividad.Size = new System.Drawing.Size(176, 22);
+            this.mnu_mant_especiales_actividad.Text = "Estado Mantención";
+            this.mnu_mant_especiales_actividad.Click += new System.EventHandler(this.mnu_mant_especiales_mantencion_Click);
             // 
-            // solicitantesToolStripMenuItem
+            // mnu_mant_especiales_permiso
             // 
-            this.solicitantesToolStripMenuItem.Name = "solicitantesToolStripMenuItem";
-            this.solicitantesToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.solicitantesToolStripMenuItem.Text = "Solicitantes";
-            this.solicitantesToolStripMenuItem.Click += new System.EventHandler(this.solicitantesToolStripMenuItem_Click);
+            this.mnu_mant_especiales_permiso.Name = "mnu_mant_especiales_permiso";
+            this.mnu_mant_especiales_permiso.Size = new System.Drawing.Size(176, 22);
+            this.mnu_mant_especiales_permiso.Text = "Permiso";
+            this.mnu_mant_especiales_permiso.Click += new System.EventHandler(this.mnu_mant_especiales_permiso_Click);
+            // 
+            // mnu_ingreso
+            // 
+            this.mnu_ingreso.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_ingreso_actividades,
+            this.mnu_ingreso_mantencion});
+            this.mnu_ingreso.Name = "mnu_ingreso";
+            this.mnu_ingreso.Size = new System.Drawing.Size(58, 20);
+            this.mnu_ingreso.Text = "&Ingreso";
+            // 
+            // mnu_ingreso_actividades
+            // 
+            this.mnu_ingreso_actividades.Name = "mnu_ingreso_actividades";
+            this.mnu_ingreso_actividades.Size = new System.Drawing.Size(152, 22);
+            this.mnu_ingreso_actividades.Text = "Actividades";
+            this.mnu_ingreso_actividades.Click += new System.EventHandler(this.mnu_ingreso_actividades_Click);
+            // 
+            // mnu_ingreso_mantencion
+            // 
+            this.mnu_ingreso_mantencion.Name = "mnu_ingreso_mantencion";
+            this.mnu_ingreso_mantencion.Size = new System.Drawing.Size(152, 22);
+            this.mnu_ingreso_mantencion.Text = "Mantención";
+            // 
+            // mnu_reportes
+            // 
+            this.mnu_reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_reportes_generar,
+            this.mnu_reportes_buscar,
+            this.mnu_reportes_divisor,
+            this.mnu_reportes_eliminadas,
+            this.mnu_reportes_folios});
+            this.mnu_reportes.Name = "mnu_reportes";
+            this.mnu_reportes.Size = new System.Drawing.Size(65, 20);
+            this.mnu_reportes.Text = "Reportes";
+            // 
+            // mnu_reportes_generar
+            // 
+            this.mnu_reportes_generar.Name = "mnu_reportes_generar";
+            this.mnu_reportes_generar.Size = new System.Drawing.Size(195, 22);
+            this.mnu_reportes_generar.Text = "Generar Reporte";
+            // 
+            // mnu_reportes_buscar
+            // 
+            this.mnu_reportes_buscar.Name = "mnu_reportes_buscar";
+            this.mnu_reportes_buscar.Size = new System.Drawing.Size(195, 22);
+            this.mnu_reportes_buscar.Text = "Buscar Reporte";
+            // 
+            // mnu_reportes_divisor
+            // 
+            this.mnu_reportes_divisor.Name = "mnu_reportes_divisor";
+            this.mnu_reportes_divisor.Size = new System.Drawing.Size(192, 6);
+            // 
+            // mnu_reportes_eliminadas
+            // 
+            this.mnu_reportes_eliminadas.Name = "mnu_reportes_eliminadas";
+            this.mnu_reportes_eliminadas.Size = new System.Drawing.Size(195, 22);
+            this.mnu_reportes_eliminadas.Text = "Actividades eliminadas";
+            // 
+            // mnu_reportes_folios
+            // 
+            this.mnu_reportes_folios.Name = "mnu_reportes_folios";
+            this.mnu_reportes_folios.Size = new System.Drawing.Size(195, 22);
+            this.mnu_reportes_folios.Text = "Folios Usados";
+            // 
+            // mnu_ventanas
+            // 
+            this.mnu_ventanas.Name = "mnu_ventanas";
+            this.mnu_ventanas.Size = new System.Drawing.Size(66, 20);
+            this.mnu_ventanas.Text = "&Ventanas";
+            // 
+            // mnu_cerrar_sesion
+            // 
+            this.mnu_cerrar_sesion.Name = "mnu_cerrar_sesion";
+            this.mnu_cerrar_sesion.Size = new System.Drawing.Size(88, 20);
+            this.mnu_cerrar_sesion.Text = "&Cerrar Sesión";
+            this.mnu_cerrar_sesion.Click += new System.EventHandler(this.mnu_cerrar_sesion_Click);
+            // 
+            // mnu_salir
+            // 
+            this.mnu_salir.Name = "mnu_salir";
+            this.mnu_salir.Size = new System.Drawing.Size(41, 20);
+            this.mnu_salir.Text = "&Salir";
+            this.mnu_salir.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // frm_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 367);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.mnu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.mnu;
             this.Name = "frm_principal";
             this.Text = "Programa de Mantenimiento";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_principal_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnu.ResumeLayout(false);
+            this.mnu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,26 +336,38 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mantenedoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem seccionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lineasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem máquinasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mecánicosOResponsablesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clasificaciónDeMantenciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ingresoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actividadesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generarReporteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem buscarReporteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem actividadesEliminadasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem foliosUsadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ventanasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solicitantesToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip mnu;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_clasificacion;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_usuarios;
+        private System.Windows.Forms.ToolStripMenuItem mnu_ingreso;
+        private System.Windows.Forms.ToolStripMenuItem mnu_ingreso_actividades;
+        private System.Windows.Forms.ToolStripMenuItem mnu_ingreso_mantencion;
+        private System.Windows.Forms.ToolStripMenuItem mnu_reportes;
+        private System.Windows.Forms.ToolStripMenuItem mnu_reportes_generar;
+        private System.Windows.Forms.ToolStripMenuItem mnu_reportes_buscar;
+        private System.Windows.Forms.ToolStripSeparator mnu_reportes_divisor;
+        private System.Windows.Forms.ToolStripMenuItem mnu_reportes_eliminadas;
+        private System.Windows.Forms.ToolStripMenuItem mnu_reportes_folios;
+        private System.Windows.Forms.ToolStripMenuItem mnu_ventanas;
+        private System.Windows.Forms.ToolStripMenuItem mnu_salir;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_especiales;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_especiales_asignacion;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_especiales_estado;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_especiales_permiso;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_especiales_actividad;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_lugares;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_lugares_secciones;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_lugares_lineas;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_lugares_maquinas;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_personas;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_personas_mecanicos;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_personas_solicitantes;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_partes;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_partes_articulos;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_partes_tipos;
+        private System.Windows.Forms.ToolStripMenuItem mnu_cerrar_sesion;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_personas_cargos;
     }
 }
 

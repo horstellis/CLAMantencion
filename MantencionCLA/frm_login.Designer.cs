@@ -38,15 +38,19 @@
             // 
             // txt_usuario
             // 
+            this.txt_usuario.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_usuario.Location = new System.Drawing.Point(85, 9);
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(120, 20);
+            this.txt_usuario.ShortcutsEnabled = false;
+            this.txt_usuario.Size = new System.Drawing.Size(120, 23);
             this.txt_usuario.TabIndex = 7;
             this.txt_usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuario_KeyPress);
             // 
             // btn_salir
             // 
             this.btn_salir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_salir.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salir.Location = new System.Drawing.Point(130, 73);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(75, 23);
@@ -57,6 +61,7 @@
             // 
             // btn_ingresar
             // 
+            this.btn_ingresar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ingresar.Location = new System.Drawing.Point(15, 73);
             this.btn_ingresar.Name = "btn_ingresar";
             this.btn_ingresar.Size = new System.Drawing.Size(75, 23);
@@ -67,31 +72,34 @@
             // 
             // txt_password
             // 
+            this.txt_password.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_password.Location = new System.Drawing.Point(85, 35);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
-            this.txt_password.Size = new System.Drawing.Size(120, 20);
+            this.txt_password.ShortcutsEnabled = false;
+            this.txt_password.Size = new System.Drawing.Size(120, 23);
             this.txt_password.TabIndex = 9;
             this.txt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_password.UseSystemPasswordChar = true;
+            this.txt_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_password_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 18);
+            this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "Clave";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 18);
+            this.label1.Size = new System.Drawing.Size(48, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "Usuario";
             // 
@@ -99,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_salir;
             this.ClientSize = new System.Drawing.Size(221, 111);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.btn_salir);
@@ -107,9 +116,14 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(237, 150);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(237, 150);
             this.Name = "frm_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesión";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_login_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

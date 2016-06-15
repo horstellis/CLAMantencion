@@ -36,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,8 +48,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,14 +61,60 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="auxiliar.cs" />
+    <Compile Include="Clases\auxiliar.cs" />
+    <Compile Include="Clases\sqlaux.cs" />
+    <Compile Include="frm_activa_usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_activa_usuario.Designer.cs">
+      <DependentUpon>frm_activa_usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mantencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mantencion.Designer.cs">
+      <DependentUpon>frm_mantencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mant_articulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mant_articulos.Designer.cs">
+      <DependentUpon>frm_mant_articulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mant_basico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mant_basico.Designer.cs">
+      <DependentUpon>frm_mant_basico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mant_foraneo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mant_foraneo.Designer.cs">
+      <DependentUpon>frm_mant_foraneo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mant_medio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mant_medio.Designer.cs">
+      <DependentUpon>frm_mant_medio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mant_responsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mant_responsable.Designer.cs">
+      <DependentUpon>frm_mant_responsable.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_mant_usuarios.cs">
       <SubType>Form</SubType>
@@ -78,23 +128,39 @@
     <Compile Include="frm_principal.Designer.cs">
       <DependentUpon>frm_principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_mant_solicitante.cs">
+    <Compile Include="frm_solicitud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_mant_solicitante.Designer.cs">
-      <DependentUpon>frm_mant_solicitante.cs</DependentUpon>
-    </Compile>
-    <Compile Include="mantencionDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>mantencionDataSet.xsd</DependentUpon>
+    <Compile Include="frm_solicitud.Designer.cs">
+      <DependentUpon>frm_solicitud.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sql.cs" />
-    <Compile Include="util.cs" />
+    <Compile Include="Clases\sql.cs" />
+    <Compile Include="Clases\util.cs" />
+    <EmbeddedResource Include="frm_activa_usuario.resx">
+      <DependentUpon>frm_activa_usuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mantencion.resx">
+      <DependentUpon>frm_mantencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mant_articulos.resx">
+      <DependentUpon>frm_mant_articulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mant_basico.resx">
+      <DependentUpon>frm_mant_basico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mant_foraneo.resx">
+      <DependentUpon>frm_mant_foraneo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mant_medio.resx">
+      <DependentUpon>frm_mant_medio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mant_responsable.resx">
+      <DependentUpon>frm_mant_responsable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_mant_usuarios.resx">
       <DependentUpon>frm_mant_usuarios.cs</DependentUpon>
@@ -102,8 +168,8 @@
     <EmbeddedResource Include="frm_principal.resx">
       <DependentUpon>frm_principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_mant_solicitante.resx">
-      <DependentUpon>frm_mant_solicitante.cs</DependentUpon>
+    <EmbeddedResource Include="frm_solicitud.resx">
+      <DependentUpon>frm_solicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,17 +181,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="mantencionDataSet.xsc">
-      <DependentUpon>mantencionDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="mantencionDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>mantencionDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="mantencionDataSet.xss">
-      <DependentUpon>mantencionDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gnome_document.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Edit-Clear.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

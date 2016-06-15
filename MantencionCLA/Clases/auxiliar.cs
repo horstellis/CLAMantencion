@@ -29,62 +29,66 @@ namespace MantencionCLA
 
         public Boolean valida_teclas(KeyPressEventArgs e, int tipo)
         {
-            //Metodo para validar teclas ingresadas en los textbox, forma normal
-            Boolean resp = true;
-            switch(tipo){
+            // Metodo para validar teclas ingresadas en los textbox, forma normal
+            switch (tipo)
+            {
                 case 1:
-                    //Solo números (0-9) y teclas de control
+                    // Solo numeros (0-9) y teclas de control
                     if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar))
                     {
-                        resp = false;
+                        return false;
                     }
                     else
                     {
-                        resp = true;
+                        return true;
                     }
-                    break;
                 case 2:
-                    //Solo letras y teclas de control
-                    if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+                    // Solo letras y teclas de control
+                    if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
                     {
-                        resp = false;
+                        return false;
                     }
                     else
                     {
-                        resp = true;
+                        return true;
                     }
-                    break;
                 case 3:
-                    //Solo números (0-9), letras y teclas de control
-                    if (char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+                    // Solo numeros (0-9), letras y teclas de control
+                    if (char.IsNumber(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
                     {
-                        resp = false;
+                        return false;
                     }
                     else
                     {
-                        resp = true;
+                        return true;
                     }
-                    break;
+                default:
+                    return true;
             }
-            return resp;
         }
+
         public Boolean valida_teclas(String cadena, KeyPressEventArgs e)
         {
-            //Metodo sobrecargado para incluir cadena, no usa Switch
-            Boolean resp = true;
-            if (cadena.Contains(e.KeyChar))
+            // Metodo sobrecargado para incluir cadena, no usa Switch
+            if (cadena.Contains(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
             {
-                resp = false;
-            }
-            else if (char.IsControl(e.KeyChar))
-            {
-                resp = false;
+                return false;
             }
             else
             {
-                resp = true;
+                return true;
             }
-            return resp;
         }
+
+        public void cambia_tecla(KeyPressEventArgs e)
+        {
+            //Metodo que permite cambiar Enter por TAB
+            if (e.KeyChar == '\r')
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
     }
 }

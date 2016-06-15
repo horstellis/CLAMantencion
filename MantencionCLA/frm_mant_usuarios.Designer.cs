@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mant_usuarios));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,28 +37,19 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.fra_permisos = new System.Windows.Forms.GroupBox();
             this.opt_visor = new System.Windows.Forms.RadioButton();
+            this.opt_usuario = new System.Windows.Forms.RadioButton();
             this.opt_admin = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.opt_bloqueado = new System.Windows.Forms.RadioButton();
             this.opt_inactivo = new System.Windows.Forms.RadioButton();
             this.opt_activo = new System.Windows.Forms.RadioButton();
-            this.cmd_nuevo = new System.Windows.Forms.Button();
-            this.cmd_editar = new System.Windows.Forms.Button();
-            this.cmd_guardar = new System.Windows.Forms.Button();
-            this.cmd_cancelar = new System.Windows.Forms.Button();
-            this.cmd_salir = new System.Windows.Forms.Button();
-            this.mantencionDataSet = new MantencionCLA.mantencionDataSet();
-            this.lista_usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lista_usuariosTableAdapter = new MantencionCLA.mantencionDataSetTableAdapters.lista_usuariosTableAdapter();
-            this.tableAdapterManager = new MantencionCLA.mantencionDataSetTableAdapters.TableAdapterManager();
             this.dat_usuarios = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmd_ver_clave = new System.Windows.Forms.Button();
+            this.cmd_eliminar = new System.Windows.Forms.Button();
+            this.cmd_insertar = new System.Windows.Forms.Button();
+            this.cmd_nuevo = new System.Windows.Forms.Button();
             this.fra_permisos.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mantencionDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lista_usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_usuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,8 +93,9 @@
             this.txt_clave.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_clave.Location = new System.Drawing.Point(119, 35);
             this.txt_clave.Name = "txt_clave";
-            this.txt_clave.Size = new System.Drawing.Size(240, 23);
+            this.txt_clave.Size = new System.Drawing.Size(216, 23);
             this.txt_clave.TabIndex = 1;
+            this.txt_clave.UseSystemPasswordChar = true;
             // 
             // txt_nombre
             // 
@@ -117,6 +108,7 @@
             // fra_permisos
             // 
             this.fra_permisos.Controls.Add(this.opt_visor);
+            this.fra_permisos.Controls.Add(this.opt_usuario);
             this.fra_permisos.Controls.Add(this.opt_admin);
             this.fra_permisos.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fra_permisos.Location = new System.Drawing.Point(15, 90);
@@ -129,13 +121,26 @@
             // opt_visor
             // 
             this.opt_visor.AutoSize = true;
-            this.opt_visor.Location = new System.Drawing.Point(206, 22);
+            this.opt_visor.Location = new System.Drawing.Point(256, 22);
             this.opt_visor.Name = "opt_visor";
             this.opt_visor.Size = new System.Drawing.Size(52, 19);
             this.opt_visor.TabIndex = 0;
             this.opt_visor.TabStop = true;
             this.opt_visor.Text = "Visor";
             this.opt_visor.UseVisualStyleBackColor = true;
+            this.opt_visor.Click += new System.EventHandler(this.opt_visor_Click);
+            // 
+            // opt_usuario
+            // 
+            this.opt_usuario.AutoSize = true;
+            this.opt_usuario.Location = new System.Drawing.Point(137, 22);
+            this.opt_usuario.Name = "opt_usuario";
+            this.opt_usuario.Size = new System.Drawing.Size(66, 19);
+            this.opt_usuario.TabIndex = 0;
+            this.opt_usuario.TabStop = true;
+            this.opt_usuario.Text = "Usuario";
+            this.opt_usuario.UseVisualStyleBackColor = true;
+            this.opt_usuario.Click += new System.EventHandler(this.opt_usuario_Click);
             // 
             // opt_admin
             // 
@@ -147,9 +152,11 @@
             this.opt_admin.TabStop = true;
             this.opt_admin.Text = "Administrador";
             this.opt_admin.UseVisualStyleBackColor = true;
+            this.opt_admin.Click += new System.EventHandler(this.opt_admin_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.opt_bloqueado);
             this.groupBox1.Controls.Add(this.opt_inactivo);
             this.groupBox1.Controls.Add(this.opt_activo);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,16 +167,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado del Usuario";
             // 
+            // opt_bloqueado
+            // 
+            this.opt_bloqueado.AutoSize = true;
+            this.opt_bloqueado.Location = new System.Drawing.Point(256, 24);
+            this.opt_bloqueado.Name = "opt_bloqueado";
+            this.opt_bloqueado.Size = new System.Drawing.Size(82, 19);
+            this.opt_bloqueado.TabIndex = 0;
+            this.opt_bloqueado.TabStop = true;
+            this.opt_bloqueado.Text = "Bloqueado";
+            this.opt_bloqueado.UseVisualStyleBackColor = true;
+            this.opt_bloqueado.Click += new System.EventHandler(this.opt_bloqueado_Click);
+            // 
             // opt_inactivo
             // 
             this.opt_inactivo.AutoSize = true;
-            this.opt_inactivo.Location = new System.Drawing.Point(206, 22);
+            this.opt_inactivo.Location = new System.Drawing.Point(137, 22);
             this.opt_inactivo.Name = "opt_inactivo";
             this.opt_inactivo.Size = new System.Drawing.Size(66, 19);
             this.opt_inactivo.TabIndex = 0;
             this.opt_inactivo.TabStop = true;
             this.opt_inactivo.Text = "Inactivo";
             this.opt_inactivo.UseVisualStyleBackColor = true;
+            this.opt_inactivo.Click += new System.EventHandler(this.opt_inactivo_Click);
             // 
             // opt_activo
             // 
@@ -181,99 +201,7 @@
             this.opt_activo.TabStop = true;
             this.opt_activo.Text = "Activo";
             this.opt_activo.UseVisualStyleBackColor = true;
-            // 
-            // cmd_nuevo
-            // 
-            this.cmd_nuevo.Image = ((System.Drawing.Image)(resources.GetObject("cmd_nuevo.Image")));
-            this.cmd_nuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmd_nuevo.Location = new System.Drawing.Point(15, 200);
-            this.cmd_nuevo.Name = "cmd_nuevo";
-            this.cmd_nuevo.Size = new System.Drawing.Size(64, 60);
-            this.cmd_nuevo.TabIndex = 3;
-            this.cmd_nuevo.Text = "&Nuevo";
-            this.cmd_nuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmd_nuevo.UseVisualStyleBackColor = true;
-            // 
-            // cmd_editar
-            // 
-            this.cmd_editar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_editar.Image")));
-            this.cmd_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmd_editar.Location = new System.Drawing.Point(85, 200);
-            this.cmd_editar.Name = "cmd_editar";
-            this.cmd_editar.Size = new System.Drawing.Size(64, 60);
-            this.cmd_editar.TabIndex = 3;
-            this.cmd_editar.Text = "&Editar";
-            this.cmd_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmd_editar.UseVisualStyleBackColor = true;
-            // 
-            // cmd_guardar
-            // 
-            this.cmd_guardar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_guardar.Image")));
-            this.cmd_guardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmd_guardar.Location = new System.Drawing.Point(155, 200);
-            this.cmd_guardar.Name = "cmd_guardar";
-            this.cmd_guardar.Size = new System.Drawing.Size(64, 60);
-            this.cmd_guardar.TabIndex = 3;
-            this.cmd_guardar.Text = "&Guardar";
-            this.cmd_guardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmd_guardar.UseVisualStyleBackColor = true;
-            // 
-            // cmd_cancelar
-            // 
-            this.cmd_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_cancelar.Image")));
-            this.cmd_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmd_cancelar.Location = new System.Drawing.Point(225, 200);
-            this.cmd_cancelar.Name = "cmd_cancelar";
-            this.cmd_cancelar.Size = new System.Drawing.Size(64, 60);
-            this.cmd_cancelar.TabIndex = 3;
-            this.cmd_cancelar.Text = "&Cancelar";
-            this.cmd_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmd_cancelar.UseVisualStyleBackColor = true;
-            // 
-            // cmd_salir
-            // 
-            this.cmd_salir.Image = ((System.Drawing.Image)(resources.GetObject("cmd_salir.Image")));
-            this.cmd_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cmd_salir.Location = new System.Drawing.Point(295, 200);
-            this.cmd_salir.Name = "cmd_salir";
-            this.cmd_salir.Size = new System.Drawing.Size(64, 60);
-            this.cmd_salir.TabIndex = 3;
-            this.cmd_salir.Text = "&Salir";
-            this.cmd_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.cmd_salir.UseVisualStyleBackColor = true;
-            // 
-            // mantencionDataSet
-            // 
-            this.mantencionDataSet.DataSetName = "mantencionDataSet";
-            this.mantencionDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lista_usuariosBindingSource
-            // 
-            this.lista_usuariosBindingSource.DataMember = "lista_usuarios";
-            this.lista_usuariosBindingSource.DataSource = this.mantencionDataSet;
-            // 
-            // lista_usuariosTableAdapter
-            // 
-            this.lista_usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.asignacionTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clasificacionTableAdapter = null;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.det_diarioTableAdapter = null;
-            this.tableAdapterManager.enc_diarioTableAdapter = null;
-            this.tableAdapterManager.estado_actvidadTableAdapter = null;
-            this.tableAdapterManager.estadoTableAdapter = null;
-            this.tableAdapterManager.permisoTableAdapter = null;
-            this.tableAdapterManager.responsable_asignadoTableAdapter = null;
-            this.tableAdapterManager.responsableTableAdapter = null;
-            this.tableAdapterManager.seccionTableAdapter = null;
-            this.tableAdapterManager.sectorTableAdapter = null;
-            this.tableAdapterManager.solicitanteTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MantencionCLA.mantencionDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usuariosTableAdapter = null;
+            this.opt_activo.Click += new System.EventHandler(this.opt_activo_Click);
             // 
             // dat_usuarios
             // 
@@ -281,55 +209,83 @@
             this.dat_usuarios.AllowUserToDeleteRows = false;
             this.dat_usuarios.AllowUserToResizeColumns = false;
             this.dat_usuarios.AllowUserToResizeRows = false;
-            this.dat_usuarios.AutoGenerateColumns = false;
             this.dat_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dat_usuarios.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dat_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dat_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dat_usuarios.DataSource = this.lista_usuariosBindingSource;
-            this.dat_usuarios.Location = new System.Drawing.Point(365, 9);
+            this.dat_usuarios.Location = new System.Drawing.Point(366, 9);
             this.dat_usuarios.Name = "dat_usuarios";
             this.dat_usuarios.RowHeadersVisible = false;
-            this.dat_usuarios.Size = new System.Drawing.Size(359, 251);
-            this.dat_usuarios.TabIndex = 14;
+            this.dat_usuarios.Size = new System.Drawing.Size(358, 248);
+            this.dat_usuarios.TabIndex = 28;
+            this.dat_usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dat_usuarios_CellClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // cmd_ver_clave
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Usuario";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Usuario";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.cmd_ver_clave.BackColor = System.Drawing.Color.Transparent;
+            this.cmd_ver_clave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.cmd_ver_clave.FlatAppearance.BorderSize = 0;
+            this.cmd_ver_clave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
+            this.cmd_ver_clave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_ver_clave.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_ver_clave.Location = new System.Drawing.Point(341, 37);
+            this.cmd_ver_clave.Name = "cmd_ver_clave";
+            this.cmd_ver_clave.Size = new System.Drawing.Size(18, 21);
+            this.cmd_ver_clave.TabIndex = 35;
+            this.cmd_ver_clave.Text = "";
+            this.cmd_ver_clave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.cmd_ver_clave.UseVisualStyleBackColor = false;
+            this.cmd_ver_clave.MouseEnter += new System.EventHandler(this.cmd_ver_clave_MouseEnter);
+            this.cmd_ver_clave.MouseLeave += new System.EventHandler(this.cmd_ver_clave_MouseLeave);
             // 
-            // dataGridViewTextBoxColumn2
+            // cmd_eliminar
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre Usuario";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre Usuario";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.cmd_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_eliminar.Image")));
+            this.cmd_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmd_eliminar.Location = new System.Drawing.Point(135, 200);
+            this.cmd_eliminar.Name = "cmd_eliminar";
+            this.cmd_eliminar.Size = new System.Drawing.Size(103, 60);
+            this.cmd_eliminar.TabIndex = 25;
+            this.cmd_eliminar.Text = "&Eliminar";
+            this.cmd_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmd_eliminar.UseVisualStyleBackColor = true;
+            this.cmd_eliminar.Click += new System.EventHandler(this.cmd_eliminar_Click);
             // 
-            // dataGridViewTextBoxColumn3
+            // cmd_insertar
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Tipo Permiso";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tipo Permiso";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.cmd_insertar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_insertar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_insertar.Image")));
+            this.cmd_insertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmd_insertar.Location = new System.Drawing.Point(15, 200);
+            this.cmd_insertar.Name = "cmd_insertar";
+            this.cmd_insertar.Size = new System.Drawing.Size(103, 60);
+            this.cmd_insertar.TabIndex = 26;
+            this.cmd_insertar.Text = "&Agregar\r\nActualizar";
+            this.cmd_insertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmd_insertar.UseVisualStyleBackColor = true;
+            this.cmd_insertar.Click += new System.EventHandler(this.cmd_insertar_Click);
             // 
-            // dataGridViewTextBoxColumn4
+            // cmd_nuevo
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Estado";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.cmd_nuevo.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Clear;
+            this.cmd_nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cmd_nuevo.Location = new System.Drawing.Point(255, 200);
+            this.cmd_nuevo.Name = "cmd_nuevo";
+            this.cmd_nuevo.Size = new System.Drawing.Size(103, 60);
+            this.cmd_nuevo.TabIndex = 27;
+            this.cmd_nuevo.Text = "&Limpiar";
+            this.cmd_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmd_nuevo.UseVisualStyleBackColor = true;
+            this.cmd_nuevo.Click += new System.EventHandler(this.cmd_nuevo_Click);
             // 
             // frm_mant_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 269);
+            this.Controls.Add(this.cmd_ver_clave);
             this.Controls.Add(this.dat_usuarios);
-            this.Controls.Add(this.cmd_salir);
-            this.Controls.Add(this.cmd_cancelar);
-            this.Controls.Add(this.cmd_guardar);
-            this.Controls.Add(this.cmd_editar);
+            this.Controls.Add(this.cmd_eliminar);
+            this.Controls.Add(this.cmd_insertar);
             this.Controls.Add(this.cmd_nuevo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.fra_permisos);
@@ -350,8 +306,6 @@
             this.fra_permisos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mantencionDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lista_usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dat_usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -372,19 +326,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton opt_inactivo;
         private System.Windows.Forms.RadioButton opt_activo;
+        private System.Windows.Forms.Button cmd_eliminar;
+        private System.Windows.Forms.Button cmd_insertar;
         private System.Windows.Forms.Button cmd_nuevo;
-        private System.Windows.Forms.Button cmd_editar;
-        private System.Windows.Forms.Button cmd_guardar;
-        private System.Windows.Forms.Button cmd_cancelar;
-        private System.Windows.Forms.Button cmd_salir;
-        private mantencionDataSet mantencionDataSet;
-        private System.Windows.Forms.BindingSource lista_usuariosBindingSource;
-        private mantencionDataSetTableAdapters.lista_usuariosTableAdapter lista_usuariosTableAdapter;
-        private mantencionDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dat_usuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.RadioButton opt_usuario;
+        private System.Windows.Forms.RadioButton opt_bloqueado;
+        private System.Windows.Forms.Button cmd_ver_clave;
     }
 }
