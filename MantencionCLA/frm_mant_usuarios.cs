@@ -15,7 +15,6 @@ namespace MantencionCLA
     {
         private auxiliar aux = new auxiliar();
         private sql sql = new sql();
-        private sqlaux saux = new sqlaux();
         private String usuario = "";
         private int permiso = 0, estado = 0;
 
@@ -31,10 +30,17 @@ namespace MantencionCLA
 
         private void llena_tabla()
         {
-            sql.llenar_grid(dat_usuarios, saux.select("*", "lista_usuarios"));
-            dat_usuarios.Columns[5].Visible = false;
-            dat_usuarios.Columns[6].Visible = false;
-            dat_usuarios.Columns[7].Visible = false;
+            try
+            {
+                sql.llenar_grid(dat_usuarios, "SELECT * FROM lista_usuarios");
+                dat_usuarios.Columns[5].Visible = false;
+                dat_usuarios.Columns[6].Visible = false;
+                dat_usuarios.Columns[7].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                util.getMenu().setMsgError(ex.Message);
+            }
         }
 
         private void dat_usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -112,10 +118,10 @@ namespace MantencionCLA
                 }
                 if (valida)
                 {
-                    SqlDataReader consulta = sql.consulta("SELECT COUNT(*) FROM usuarios WHERE id_permiso = 1");
+                    SqlDataReader consulta = sql.consulta("SELECT COUNT(*) FROM usuarios WHERE id_permiso = 1 AND usuario <> '" + usuario + "'");
                     consulta.Read();
-                    int verifica = int.Parse(consulta[0].ToString());
-                    if (verifica > 1)
+                    int verifica = consulta.GetInt32(0);
+                    if (verifica >= 1)
                     {
                         int exec = sql.ejecutar("DELETE FROM usuarios WHERE usuario = '" + usuario + "'");
                         if (exec > 0)
@@ -169,7 +175,7 @@ namespace MantencionCLA
             }
             else if (txt_usuario.Text.Trim().Length < 3)
             {
-                aux.dialogo("Nombre de usuario debe ser de tres o más caracteres", this.Text, 3);
+                aux.dialogo("Usuario debe ser de tres o más caracteres", this.Text, 3);
                 txt_usuario.SelectAll();
                 txt_usuario.Focus();
                 return false;
@@ -181,9 +187,22 @@ namespace MantencionCLA
                 txt_clave.Focus();
                 return false;
             }
+            else if (txt_clave.Text.Trim().Length < 4)
+            {
+                aux.dialogo("Clave debe ser de cuatro o más caracteres", this.Text, 3);
+                txt_clave.Clear();
+                txt_clave.Focus();
+                return false;
+            }
             else if (txt_nombre.Text.Trim().Length==0)
             {
                 aux.dialogo("Debe indicar nombre del usuario", this.Text, 3);
+                txt_nombre.Focus();
+                return false;
+            }
+            else if (txt_nombre.Text.Trim().Length < 3)
+            {
+                aux.dialogo("Nombre de usuario debe ser de tres o más caracteres", this.Text, 3);
                 txt_nombre.Focus();
                 return false;
             }
@@ -216,7 +235,8 @@ namespace MantencionCLA
                         query += "pass = '" + txt_clave.Text.Trim() + "', ";
                         query += "nombre = '" + txt_nombre.Text.Trim() + "', ";
                         query += "id_permiso = " + permiso + ", ";
-                        query += "id_estado = " + estado + " ";
+                        query += "id_estado = " + estado + ", ";
+                        query += "intentos_sesion = 0 ";
                         query += "WHERE usuario = '" + txt_usuario.Text.Trim() + "'";
                         int exec = sql.ejecutar(query);
                         if (exec > 0)
@@ -281,6 +301,31 @@ namespace MantencionCLA
         private void opt_bloqueado_Click(object sender, EventArgs e)
         {
             estado = 3;
+        }
+
+        private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = aux.valida_user(e);
+        }
+
+        private void txt_clave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = aux.valida_pass(e);
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String cadena = "abcdefghijklmnñopqrstuvwxyz";
+            cadena += "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+            cadena += "0123456789";
+            cadena += "-";
+            e.Handled = aux.valida_teclas(cadena, e);
+        }
+
+        private void cmd_imprimir_Click(object sender, EventArgs e)
+        {
+            frm_imprimir imprimir = new frm_imprimir();
+            imprimir.Show();
         }
     }
 }

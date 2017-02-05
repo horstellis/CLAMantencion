@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mant_responsable));
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmd_eliminar = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.cmb_cargo = new System.Windows.Forms.ComboBox();
             this.dat_responsable = new System.Windows.Forms.DataGridView();
+            this.tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dat_responsable)).BeginInit();
             this.SuspendLayout();
@@ -47,60 +48,69 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 15);
+            this.label1.Size = new System.Drawing.Size(49, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 43);
+            this.label2.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cargo";
             // 
             // cmd_eliminar
             // 
-            this.cmd_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_eliminar.Image")));
-            this.cmd_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmd_eliminar.Location = new System.Drawing.Point(358, 72);
+            this.cmd_eliminar.FlatAppearance.BorderSize = 0;
+            this.cmd_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_eliminar.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Delete_48px;
+            this.cmd_eliminar.Location = new System.Drawing.Point(399, 72);
             this.cmd_eliminar.Name = "cmd_eliminar";
-            this.cmd_eliminar.Size = new System.Drawing.Size(103, 60);
+            this.cmd_eliminar.Size = new System.Drawing.Size(60, 60);
             this.cmd_eliminar.TabIndex = 29;
-            this.cmd_eliminar.Text = "&Eliminar";
             this.cmd_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_eliminar, "Eliminar responsable");
             this.cmd_eliminar.UseVisualStyleBackColor = true;
             this.cmd_eliminar.Click += new System.EventHandler(this.cmd_eliminar_Click);
             // 
             // cmd_insertar
             // 
+            this.cmd_insertar.FlatAppearance.BorderSize = 0;
+            this.cmd_insertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_insertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_insertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_insertar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd_insertar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_insertar.Image")));
-            this.cmd_insertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmd_insertar.Location = new System.Drawing.Point(358, 6);
+            this.cmd_insertar.Image = global::MantencionCLA.Properties.Resources.Gnome_Media_Floppy_48px;
+            this.cmd_insertar.Location = new System.Drawing.Point(399, 6);
             this.cmd_insertar.Name = "cmd_insertar";
-            this.cmd_insertar.Size = new System.Drawing.Size(103, 60);
+            this.cmd_insertar.Size = new System.Drawing.Size(60, 60);
             this.cmd_insertar.TabIndex = 30;
-            this.cmd_insertar.Text = "&Agregar\r\nActualizar";
             this.cmd_insertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_insertar, "Agregar o actualizar responsable");
             this.cmd_insertar.UseVisualStyleBackColor = true;
             this.cmd_insertar.Click += new System.EventHandler(this.cmd_insertar_Click);
             // 
             // cmd_nuevo
             // 
-            this.cmd_nuevo.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Clear;
-            this.cmd_nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmd_nuevo.Location = new System.Drawing.Point(358, 138);
+            this.cmd_nuevo.FlatAppearance.BorderSize = 0;
+            this.cmd_nuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_nuevo.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Clear_48px;
+            this.cmd_nuevo.Location = new System.Drawing.Point(399, 138);
             this.cmd_nuevo.Name = "cmd_nuevo";
-            this.cmd_nuevo.Size = new System.Drawing.Size(103, 60);
+            this.cmd_nuevo.Size = new System.Drawing.Size(60, 60);
             this.cmd_nuevo.TabIndex = 31;
-            this.cmd_nuevo.Text = "&Limpiar";
             this.cmd_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_nuevo, "Limpiar campos");
             this.cmd_nuevo.UseVisualStyleBackColor = true;
             this.cmd_nuevo.Click += new System.EventHandler(this.cmd_nuevo_Click);
             // 
@@ -108,10 +118,10 @@
             // 
             this.groupBox1.Controls.Add(this.opt_inactivo);
             this.groupBox1.Controls.Add(this.opt_activo);
-            this.groupBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 76);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(8, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(344, 49);
+            this.groupBox1.Size = new System.Drawing.Size(385, 49);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado del Responsable";
@@ -120,7 +130,7 @@
             // 
             this.opt_inactivo.AutoSize = true;
             this.opt_inactivo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.opt_inactivo.Location = new System.Drawing.Point(272, 23);
+            this.opt_inactivo.Location = new System.Drawing.Point(313, 23);
             this.opt_inactivo.Name = "opt_inactivo";
             this.opt_inactivo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.opt_inactivo.Size = new System.Drawing.Size(66, 19);
@@ -145,8 +155,9 @@
             // 
             this.txt_nombre.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre.Location = new System.Drawing.Point(128, 6);
+            this.txt_nombre.MaxLength = 50;
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(224, 23);
+            this.txt_nombre.Size = new System.Drawing.Size(265, 23);
             this.txt_nombre.TabIndex = 32;
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
@@ -155,9 +166,9 @@
             this.cmb_cargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cargo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_cargo.FormattingEnabled = true;
-            this.cmb_cargo.Location = new System.Drawing.Point(128, 40);
+            this.cmb_cargo.Location = new System.Drawing.Point(128, 35);
             this.cmb_cargo.Name = "cmb_cargo";
-            this.cmb_cargo.Size = new System.Drawing.Size(224, 23);
+            this.cmb_cargo.Size = new System.Drawing.Size(265, 23);
             this.cmb_cargo.TabIndex = 33;
             this.cmb_cargo.DropDownClosed += new System.EventHandler(this.cmb_cargo_DropDownClosed);
             // 
@@ -168,12 +179,14 @@
             this.dat_responsable.AllowUserToResizeColumns = false;
             this.dat_responsable.AllowUserToResizeRows = false;
             this.dat_responsable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dat_responsable.BackgroundColor = System.Drawing.Color.Snow;
             this.dat_responsable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dat_responsable.Location = new System.Drawing.Point(8, 132);
+            this.dat_responsable.GridColor = System.Drawing.Color.Snow;
+            this.dat_responsable.Location = new System.Drawing.Point(8, 119);
             this.dat_responsable.Name = "dat_responsable";
             this.dat_responsable.ReadOnly = true;
             this.dat_responsable.RowHeadersVisible = false;
-            this.dat_responsable.Size = new System.Drawing.Size(344, 218);
+            this.dat_responsable.Size = new System.Drawing.Size(385, 218);
             this.dat_responsable.TabIndex = 34;
             this.dat_responsable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dat_responsable_CellClick);
             // 
@@ -181,7 +194,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 362);
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(471, 350);
             this.Controls.Add(this.dat_responsable);
             this.Controls.Add(this.cmb_cargo);
             this.Controls.Add(this.txt_nombre);
@@ -191,10 +205,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(487, 401);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(487, 401);
             this.Name = "frm_mant_responsable";
             this.Text = "Mantenedor Responsable";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_mant_responsable_FormClosing);
@@ -220,5 +233,6 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.ComboBox cmb_cargo;
         private System.Windows.Forms.DataGridView dat_responsable;
+        private System.Windows.Forms.ToolTip tooltip;
     }
 }

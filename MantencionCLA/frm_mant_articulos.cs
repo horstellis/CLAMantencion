@@ -101,9 +101,9 @@ namespace MantencionCLA
                 txt_cantidad.Focus();
                 return false;
             }
-            else if (int.Parse(txt_cantidad.Text) == 0)
+            else if (int.Parse(txt_cantidad.Text) < 0)
             {
-                aux.dialogo("Cantidad debe ser mayor a 0", this.Text, 3);
+                aux.dialogo("Cantidad no puede ser negativa", this.Text, 3);
                 txt_cantidad.SelectAll();
                 txt_cantidad.Focus();
                 return false;

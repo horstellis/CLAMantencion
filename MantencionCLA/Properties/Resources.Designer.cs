@@ -63,6 +63,36 @@ namespace MantencionCLA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _48px_Gnome_document_print_svg {
+            get {
+                object obj = ResourceManager.GetObject("48px-Gnome-document-print.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _48px_Gnome_emblem_default_svg {
+            get {
+                object obj = ResourceManager.GetObject("48px-Gnome-emblem-default.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _48px_Gnome_system_shutdown_svg {
+            get {
+                object obj = ResourceManager.GetObject("48px-Gnome-system-shutdown.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _new {
             get {
                 object obj = ResourceManager.GetObject("new", resourceCulture);
@@ -96,6 +126,56 @@ namespace MantencionCLA.Properties {
         internal static System.Drawing.Bitmap Gnome_Edit_Clear {
             get {
                 object obj = ResourceManager.GetObject("Gnome-Edit-Clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gnome_Edit_Clear_48px {
+            get {
+                object obj = ResourceManager.GetObject("Gnome-Edit-Clear 48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gnome_Edit_Delete_48px {
+            get {
+                object obj = ResourceManager.GetObject("Gnome-Edit-Delete 48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gnome_edit_find {
+            get {
+                object obj = ResourceManager.GetObject("Gnome_edit_find", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gnome_Media_Floppy_48px {
+            get {
+                object obj = ResourceManager.GetObject("Gnome-Media-Floppy 48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gnome_Preferences_System_48px {
+            get {
+                object obj = ResourceManager.GetObject("Gnome-Preferences-System 48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

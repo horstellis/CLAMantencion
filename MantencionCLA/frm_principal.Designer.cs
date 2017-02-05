@@ -44,17 +44,24 @@
             this.mnu_mant_partes_tipos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_mant_clasificacion = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_mant_usuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_divisor = new System.Windows.Forms.ToolStripSeparator();
             this.mnu_mant_especiales = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_mant_especiales_asignacion = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_mant_especiales_estado = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_mant_especiales_actividad = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_mant_especiales_permiso = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_mant_especiales_control = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_ingreso = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_ingreso_actividades = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_ingreso_mantencion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_ingreso_divisor = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_ingreso_administrador = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_ingreso_administrador_cambio_estado = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminaciónDeActividadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_reportes = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnu_reportes_generar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_reportes_buscar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_reportes_buscar_solicitudes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnu_reportes_buscar_actividades = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_reportes_divisor = new System.Windows.Forms.ToolStripSeparator();
             this.mnu_reportes_eliminadas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_reportes_folios = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +95,7 @@
             this.mnu_mant_partes,
             this.mnu_mant_clasificacion,
             this.mnu_mant_usuarios,
+            this.mnu_mant_divisor,
             this.mnu_mant_especiales});
             this.mnu_mant.Name = "mnu_mant";
             this.mnu_mant.Size = new System.Drawing.Size(95, 20);
@@ -192,13 +200,19 @@
             this.mnu_mant_usuarios.Text = "Usuarios";
             this.mnu_mant_usuarios.Click += new System.EventHandler(this.mnu_mant_usuarios_Click);
             // 
+            // mnu_mant_divisor
+            // 
+            this.mnu_mant_divisor.Name = "mnu_mant_divisor";
+            this.mnu_mant_divisor.Size = new System.Drawing.Size(221, 6);
+            // 
             // mnu_mant_especiales
             // 
             this.mnu_mant_especiales.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu_mant_especiales_asignacion,
             this.mnu_mant_especiales_estado,
             this.mnu_mant_especiales_actividad,
-            this.mnu_mant_especiales_permiso});
+            this.mnu_mant_especiales_permiso,
+            this.mnu_mant_especiales_control});
             this.mnu_mant_especiales.Name = "mnu_mant_especiales";
             this.mnu_mant_especiales.Size = new System.Drawing.Size(224, 22);
             this.mnu_mant_especiales.Text = "Especiales";
@@ -206,36 +220,45 @@
             // mnu_mant_especiales_asignacion
             // 
             this.mnu_mant_especiales_asignacion.Name = "mnu_mant_especiales_asignacion";
-            this.mnu_mant_especiales_asignacion.Size = new System.Drawing.Size(176, 22);
+            this.mnu_mant_especiales_asignacion.Size = new System.Drawing.Size(241, 22);
             this.mnu_mant_especiales_asignacion.Text = "Asignación";
             this.mnu_mant_especiales_asignacion.Click += new System.EventHandler(this.mnu_mant_especiales_asignacion_Click);
             // 
             // mnu_mant_especiales_estado
             // 
             this.mnu_mant_especiales_estado.Name = "mnu_mant_especiales_estado";
-            this.mnu_mant_especiales_estado.Size = new System.Drawing.Size(176, 22);
-            this.mnu_mant_especiales_estado.Text = "Estado";
+            this.mnu_mant_especiales_estado.Size = new System.Drawing.Size(241, 22);
+            this.mnu_mant_especiales_estado.Text = "Estado Usuarios o Responsables";
             this.mnu_mant_especiales_estado.Click += new System.EventHandler(this.mnu_mant_especiales_estado_Click);
             // 
             // mnu_mant_especiales_actividad
             // 
             this.mnu_mant_especiales_actividad.Name = "mnu_mant_especiales_actividad";
-            this.mnu_mant_especiales_actividad.Size = new System.Drawing.Size(176, 22);
+            this.mnu_mant_especiales_actividad.Size = new System.Drawing.Size(241, 22);
             this.mnu_mant_especiales_actividad.Text = "Estado Mantención";
             this.mnu_mant_especiales_actividad.Click += new System.EventHandler(this.mnu_mant_especiales_mantencion_Click);
             // 
             // mnu_mant_especiales_permiso
             // 
             this.mnu_mant_especiales_permiso.Name = "mnu_mant_especiales_permiso";
-            this.mnu_mant_especiales_permiso.Size = new System.Drawing.Size(176, 22);
-            this.mnu_mant_especiales_permiso.Text = "Permiso";
+            this.mnu_mant_especiales_permiso.Size = new System.Drawing.Size(241, 22);
+            this.mnu_mant_especiales_permiso.Text = "Tipos de Permiso";
             this.mnu_mant_especiales_permiso.Click += new System.EventHandler(this.mnu_mant_especiales_permiso_Click);
+            // 
+            // mnu_mant_especiales_control
+            // 
+            this.mnu_mant_especiales_control.Name = "mnu_mant_especiales_control";
+            this.mnu_mant_especiales_control.Size = new System.Drawing.Size(241, 22);
+            this.mnu_mant_especiales_control.Text = "Tipo Control";
+            this.mnu_mant_especiales_control.Click += new System.EventHandler(this.mnu_mant_especiales_control_Click);
             // 
             // mnu_ingreso
             // 
             this.mnu_ingreso.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu_ingreso_actividades,
-            this.mnu_ingreso_mantencion});
+            this.mnu_ingreso_mantencion,
+            this.mnu_ingreso_divisor,
+            this.mnu_ingreso_administrador});
             this.mnu_ingreso.Name = "mnu_ingreso";
             this.mnu_ingreso.Size = new System.Drawing.Size(58, 20);
             this.mnu_ingreso.Text = "&Ingreso";
@@ -243,21 +266,48 @@
             // mnu_ingreso_actividades
             // 
             this.mnu_ingreso_actividades.Name = "mnu_ingreso_actividades";
-            this.mnu_ingreso_actividades.Size = new System.Drawing.Size(152, 22);
-            this.mnu_ingreso_actividades.Text = "Actividades";
+            this.mnu_ingreso_actividades.Size = new System.Drawing.Size(171, 22);
+            this.mnu_ingreso_actividades.Text = "Solicitud";
             this.mnu_ingreso_actividades.Click += new System.EventHandler(this.mnu_ingreso_actividades_Click);
             // 
             // mnu_ingreso_mantencion
             // 
             this.mnu_ingreso_mantencion.Name = "mnu_ingreso_mantencion";
-            this.mnu_ingreso_mantencion.Size = new System.Drawing.Size(152, 22);
-            this.mnu_ingreso_mantencion.Text = "Mantención";
+            this.mnu_ingreso_mantencion.Size = new System.Drawing.Size(171, 22);
+            this.mnu_ingreso_mantencion.Text = "Ficha de Actividad";
             this.mnu_ingreso_mantencion.Click += new System.EventHandler(this.mnu_ingreso_mantencion_Click);
+            // 
+            // mnu_ingreso_divisor
+            // 
+            this.mnu_ingreso_divisor.Name = "mnu_ingreso_divisor";
+            this.mnu_ingreso_divisor.Size = new System.Drawing.Size(168, 6);
+            // 
+            // mnu_ingreso_administrador
+            // 
+            this.mnu_ingreso_administrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_ingreso_administrador_cambio_estado,
+            this.eliminaciónDeActividadesToolStripMenuItem});
+            this.mnu_ingreso_administrador.Name = "mnu_ingreso_administrador";
+            this.mnu_ingreso_administrador.Size = new System.Drawing.Size(171, 22);
+            this.mnu_ingreso_administrador.Text = "Administrador";
+            // 
+            // mnu_ingreso_administrador_cambio_estado
+            // 
+            this.mnu_ingreso_administrador_cambio_estado.Name = "mnu_ingreso_administrador_cambio_estado";
+            this.mnu_ingreso_administrador_cambio_estado.Size = new System.Drawing.Size(216, 22);
+            this.mnu_ingreso_administrador_cambio_estado.Text = "Cambio de Estado";
+            this.mnu_ingreso_administrador_cambio_estado.Click += new System.EventHandler(this.mnu_ingreso_administrador_cambio_estado_Click);
+            // 
+            // eliminaciónDeActividadesToolStripMenuItem
+            // 
+            this.eliminaciónDeActividadesToolStripMenuItem.Name = "eliminaciónDeActividadesToolStripMenuItem";
+            this.eliminaciónDeActividadesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.eliminaciónDeActividadesToolStripMenuItem.Text = "Eliminación de Actividades";
+            this.eliminaciónDeActividadesToolStripMenuItem.Visible = false;
             // 
             // mnu_reportes
             // 
             this.mnu_reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnu_reportes_generar,
             this.mnu_reportes_buscar,
             this.mnu_reportes_divisor,
             this.mnu_reportes_eliminadas,
@@ -266,34 +316,48 @@
             this.mnu_reportes.Size = new System.Drawing.Size(65, 20);
             this.mnu_reportes.Text = "Reportes";
             // 
-            // mnu_reportes_generar
-            // 
-            this.mnu_reportes_generar.Name = "mnu_reportes_generar";
-            this.mnu_reportes_generar.Size = new System.Drawing.Size(195, 22);
-            this.mnu_reportes_generar.Text = "Generar Reporte";
-            // 
             // mnu_reportes_buscar
             // 
+            this.mnu_reportes_buscar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_reportes_buscar_solicitudes,
+            this.mnu_reportes_buscar_actividades});
             this.mnu_reportes_buscar.Name = "mnu_reportes_buscar";
             this.mnu_reportes_buscar.Size = new System.Drawing.Size(195, 22);
             this.mnu_reportes_buscar.Text = "Buscar Reporte";
+            // 
+            // mnu_reportes_buscar_solicitudes
+            // 
+            this.mnu_reportes_buscar_solicitudes.Name = "mnu_reportes_buscar_solicitudes";
+            this.mnu_reportes_buscar_solicitudes.Size = new System.Drawing.Size(272, 22);
+            this.mnu_reportes_buscar_solicitudes.Text = "Solicitudes por Solicitante";
+            this.mnu_reportes_buscar_solicitudes.Click += new System.EventHandler(this.mnu_reportes_buscar_solicitudes_Click);
+            // 
+            // mnu_reportes_buscar_actividades
+            // 
+            this.mnu_reportes_buscar_actividades.Name = "mnu_reportes_buscar_actividades";
+            this.mnu_reportes_buscar_actividades.Size = new System.Drawing.Size(272, 22);
+            this.mnu_reportes_buscar_actividades.Text = "Actividades de Mantención / Ranking";
+            this.mnu_reportes_buscar_actividades.Click += new System.EventHandler(this.mnu_reportes_buscar_actividades_Click);
             // 
             // mnu_reportes_divisor
             // 
             this.mnu_reportes_divisor.Name = "mnu_reportes_divisor";
             this.mnu_reportes_divisor.Size = new System.Drawing.Size(192, 6);
+            this.mnu_reportes_divisor.Visible = false;
             // 
             // mnu_reportes_eliminadas
             // 
             this.mnu_reportes_eliminadas.Name = "mnu_reportes_eliminadas";
             this.mnu_reportes_eliminadas.Size = new System.Drawing.Size(195, 22);
             this.mnu_reportes_eliminadas.Text = "Actividades eliminadas";
+            this.mnu_reportes_eliminadas.Visible = false;
             // 
             // mnu_reportes_folios
             // 
             this.mnu_reportes_folios.Name = "mnu_reportes_folios";
             this.mnu_reportes_folios.Size = new System.Drawing.Size(195, 22);
-            this.mnu_reportes_folios.Text = "Folios Usados";
+            this.mnu_reportes_folios.Text = "Control de cambios";
+            this.mnu_reportes_folios.Visible = false;
             // 
             // mnu_ventanas
             // 
@@ -319,6 +383,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(691, 367);
             this.Controls.Add(this.mnu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -346,7 +411,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnu_ingreso_actividades;
         private System.Windows.Forms.ToolStripMenuItem mnu_ingreso_mantencion;
         private System.Windows.Forms.ToolStripMenuItem mnu_reportes;
-        private System.Windows.Forms.ToolStripMenuItem mnu_reportes_generar;
         private System.Windows.Forms.ToolStripMenuItem mnu_reportes_buscar;
         private System.Windows.Forms.ToolStripSeparator mnu_reportes_divisor;
         private System.Windows.Forms.ToolStripMenuItem mnu_reportes_eliminadas;
@@ -370,6 +434,14 @@
         private System.Windows.Forms.ToolStripMenuItem mnu_mant_partes_tipos;
         private System.Windows.Forms.ToolStripMenuItem mnu_cerrar_sesion;
         private System.Windows.Forms.ToolStripMenuItem mnu_mant_personas_cargos;
+        private System.Windows.Forms.ToolStripMenuItem mnu_mant_especiales_control;
+        private System.Windows.Forms.ToolStripSeparator mnu_mant_divisor;
+        private System.Windows.Forms.ToolStripSeparator mnu_ingreso_divisor;
+        private System.Windows.Forms.ToolStripMenuItem mnu_ingreso_administrador;
+        private System.Windows.Forms.ToolStripMenuItem mnu_ingreso_administrador_cambio_estado;
+        private System.Windows.Forms.ToolStripMenuItem mnu_reportes_buscar_solicitudes;
+        private System.Windows.Forms.ToolStripMenuItem mnu_reportes_buscar_actividades;
+        private System.Windows.Forms.ToolStripMenuItem eliminaciónDeActividadesToolStripMenuItem;
     }
 }
 

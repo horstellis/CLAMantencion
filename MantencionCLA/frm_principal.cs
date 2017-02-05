@@ -40,27 +40,63 @@ namespace MantencionCLA
         }
 
         private void mnu_mant_usuarios_Click(object sender, EventArgs e)
-        {   
-            frm_mant_usuarios form = new frm_mant_usuarios();
-            form.MdiParent = this;
-            form.Show();
+        {
+            if (util.getUsuarios() == null)
+            {
+                util.setMenu(this);
+                util.setUsuarios(new frm_mant_usuarios());
+                util.getUsuarios().MdiParent = this;
+                util.getUsuarios().Show();
+                if (!msg_error.Equals(""))
+                {
+                    String titulo = util.getUsuarios().Text;
+                    util.getUsuarios().Dispose();
+                    util.setUsuarios(null);
+                    aux.dialogo("Error al intentar abrir ventana " + titulo + "\nFavor contactese con soporte e informe:\n" + msg_error, this.Text, 3);
+                    msg_error = "";
+                }
+            }
+            else
+            {
+                util.getUsuarios().Activate();
+            }
         }
 
         private void frm_principal_Load(object sender, EventArgs e)
         {
+            
+            MdiClient ctl_mdi;
+            foreach (Control ctl in this.Controls)
+            {
+                try
+                {
+                    ctl_mdi = (MdiClient)ctl;
+                    ctl_mdi.BackColor = this.BackColor;
+                }
+                catch (InvalidCastException ex) 
+                {
+                    
+                }
+            }
+            
             if (id_permiso == 2)
             {
                 mnu_mant_especiales.Visible = false;
                 mnu_mant_usuarios.Visible = false;
+                mnu_mant_divisor.Visible = false;
+                mnu_ingreso_divisor.Visible = false;
+                mnu_ingreso_administrador.Visible = false;
             }
             else if (id_permiso == 3)
             {
                 mnu_mant.Visible = false;
                 mnu_ingreso_mantencion.Visible = false;
                 mnu_reportes_eliminadas.Visible = false;
-                mnu_reportes_folios.Visible = false;
-                mnu_reportes_generar.Visible = false;
+                mnu_reportes_folios.Visible = false;               
                 mnu_reportes_divisor.Visible = false;
+                mnu_mant_divisor.Visible = false;
+                mnu_ingreso_divisor.Visible = false;
+                mnu_ingreso_administrador.Visible = false;
             }
         }
 
@@ -383,6 +419,97 @@ namespace MantencionCLA
         private void frm_principal_FormClosing(object sender, FormClosingEventArgs e)
         {
             mnu_salir.PerformClick();
+        }
+
+        private void mnu_mant_especiales_fecha_Click(object sender, EventArgs e)
+        {
+            if (util.getFecha() == null)
+            {
+                util.setMenu(this);
+                util.setFecha(new frm_mant_basico());
+                util.getFecha().MdiParent = this;
+                util.getFecha().setNombreTabla("tipo_fecha");
+                util.getFecha().Show();
+                if (!msg_error.Equals(""))
+                {
+                    util.getFecha().Dispose();
+                    util.setFecha(null);
+                    aux.dialogo("Error al intentar abrir ventana\nFavor contactese con soporte e informe:\n" + msg_error, this.Text, 3);
+                    msg_error = "";
+                }
+            }
+            else
+            {
+                util.getFecha().Activate();
+            }
+        }
+
+        private void mnu_mant_especiales_control_Click(object sender, EventArgs e)
+        {
+            if (util.getControl() == null)
+            {
+                util.setMenu(this);
+                util.setControl(new frm_mant_basico());
+                util.getControl().MdiParent = this;
+                util.getControl().setNombreTabla("tipo_control");
+                util.getControl().Show();
+                if (!msg_error.Equals(""))
+                {
+                    util.getControl().Dispose();
+                    util.setControl(null);
+                    aux.dialogo("Error al intentar abrir ventana\nFavor contactese con soporte e informe:\n" + msg_error, this.Text, 3);
+                    msg_error = "";
+                }
+            }
+            else
+            {
+                util.getControl().Activate();
+            }
+        }
+
+        private void mnu_ingreso_administrador_cambio_estado_Click(object sender, EventArgs e)
+        {
+            if (util.getEspecial1() == null)
+            {
+                util.setMenu(this);
+                util.setEspecial1(new frm_especial1());
+                util.getEspecial1().MdiParent = this;
+                util.getEspecial1().Show();
+            }
+            else
+            {
+                util.getEspecial1().Activate();
+            }
+        }
+
+        private void mnu_reportes_buscar_solicitudes_Click(object sender, EventArgs e)
+        {
+            if (util.getSolicitudes() == null)
+            {
+                util.setMenu(this);
+                util.setSolicitudes(new frm_listar_solicitudes());
+                util.getSolicitudes().MdiParent = this;
+                util.getSolicitudes().Show();
+            }
+            else
+            {
+                util.getSolicitudes().Activate();
+            }
+        }
+
+        private void mnu_reportes_buscar_actividades_Click(object sender, EventArgs e)
+        {
+            if (util.getActividades() == null)
+            {
+                util.setMenu(this);
+                util.setActividades(new frm_rep_buscar());
+                util.getActividades().MdiParent = this;
+                util.getActividades().Show();
+            }
+            else
+            {
+                util.getActividades().Activate();
+            }
         }
 
     }

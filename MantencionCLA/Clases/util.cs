@@ -23,11 +23,16 @@ namespace MantencionCLA
         private static frm_mant_basico seccion;
         private static frm_mant_basico estado_mantencion;
         private static frm_mant_basico cargo;
+        private static frm_mant_basico fecha;
+        private static frm_mant_basico control;
         private static frm_mant_foraneo maquina;
         private static frm_mant_foraneo linea;
         private static frm_mant_responsable responsable;
         private static frm_mant_articulos articulos;
         private static frm_mantencion mantencion;
+        private static frm_especial1 especial1;
+        private static frm_listar_solicitudes solicitudes;
+        private static frm_rep_buscar actividades;
 
         public static frm_login getInicio()
         {
@@ -169,6 +174,26 @@ namespace MantencionCLA
             util.cargo = cargo;
         }
 
+        public static frm_mant_basico getFecha()
+        {
+            return fecha;
+        }
+
+        public static void setFecha(frm_mant_basico fecha)
+        {
+            util.fecha = fecha;
+        }
+
+        public static frm_mant_basico getControl()
+        {
+            return control;
+        }
+
+        public static void setControl(frm_mant_basico control)
+        {
+            util.control = control;
+        }
+
         public static frm_mant_foraneo getMaquina()
         {
             return maquina;
@@ -217,6 +242,36 @@ namespace MantencionCLA
         public static void setMantencion(frm_mantencion mantencion)
         {
             util.mantencion = mantencion;
+        }
+
+        public static frm_especial1 getEspecial1()
+        {
+            return especial1;
+        }
+
+        public static void setEspecial1(frm_especial1 especial1)
+        {
+            util.especial1 = especial1;
+        }
+
+        public static frm_listar_solicitudes getSolicitudes()
+        {
+            return solicitudes;
+        }
+
+        public static void setSolicitudes(frm_listar_solicitudes solicitudes)
+        {
+            util.solicitudes = solicitudes;
+        }
+
+        public static frm_rep_buscar getActividades()
+        {
+            return util.actividades;
+        }
+
+        public static void setActividades(frm_rep_buscar actividades)
+        {
+            util.actividades = actividades;
         }
     }
 }

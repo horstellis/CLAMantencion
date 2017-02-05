@@ -48,10 +48,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -73,6 +78,48 @@
     </Compile>
     <Compile Include="frm_activa_usuario.Designer.cs">
       <DependentUpon>frm_activa_usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_articulos_mantencion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_articulos_mantencion.Designer.cs">
+      <DependentUpon>frm_articulos_mantencion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_especial1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_especial1.Designer.cs">
+      <DependentUpon>frm_especial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_especial2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_especial2.Designer.cs">
+      <DependentUpon>frm_especial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_imprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_imprimir.Designer.cs">
+      <DependentUpon>frm_imprimir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_imprimir_actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_imprimir_actividades.Designer.cs">
+      <DependentUpon>frm_imprimir_actividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_imprimir_solicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_imprimir_solicitud.Designer.cs">
+      <DependentUpon>frm_imprimir_solicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_listar_solicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_listar_solicitudes.Designer.cs">
+      <DependentUpon>frm_listar_solicitudes.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
@@ -128,11 +175,31 @@
     <Compile Include="frm_principal.Designer.cs">
       <DependentUpon>frm_principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ranking_responsables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ranking_responsables.Designer.cs">
+      <DependentUpon>frm_ranking_responsables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_rep_buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_rep_buscar.Designer.cs">
+      <DependentUpon>frm_rep_buscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_solicitud.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_solicitud.Designer.cs">
       <DependentUpon>frm_solicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mantencionDataSet.cs">
+      <DependentUpon>mantencionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mantencionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mantencionDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +207,27 @@
     <Compile Include="Clases\util.cs" />
     <EmbeddedResource Include="frm_activa_usuario.resx">
       <DependentUpon>frm_activa_usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_articulos_mantencion.resx">
+      <DependentUpon>frm_articulos_mantencion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_especial1.resx">
+      <DependentUpon>frm_especial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_especial2.resx">
+      <DependentUpon>frm_especial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_imprimir.resx">
+      <DependentUpon>frm_imprimir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_imprimir_actividades.resx">
+      <DependentUpon>frm_imprimir_actividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_imprimir_solicitud.resx">
+      <DependentUpon>frm_imprimir_solicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_listar_solicitudes.resx">
+      <DependentUpon>frm_listar_solicitudes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
@@ -168,6 +256,12 @@
     <EmbeddedResource Include="frm_principal.resx">
       <DependentUpon>frm_principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_ranking_responsables.resx">
+      <DependentUpon>frm_ranking_responsables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_rep_buscar.resx">
+      <DependentUpon>frm_rep_buscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_solicitud.resx">
       <DependentUpon>frm_solicitud.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +275,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\rpt_listar_actividades.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_listar_solicitudes.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_ranking.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_solicitud.rdlc" />
+    <EmbeddedResource Include="Reportes\rpt_usuarios.rdlc" />
+    <None Include="mantencionDataSet.xsc">
+      <DependentUpon>mantencionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="mantencionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mantencionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mantencionDataSet.xss">
+      <DependentUpon>mantencionDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -226,6 +336,31 @@
   <ItemGroup>
     <None Include="Resources\Gnome-Edit-Clear.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome_edit_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Edit-Clear 48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Edit-Delete 48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Media-Floppy 48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Preferences-System 48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\48px-Gnome-emblem-default.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\48px-Gnome-system-shutdown.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\48px-Gnome-document-print.svg.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

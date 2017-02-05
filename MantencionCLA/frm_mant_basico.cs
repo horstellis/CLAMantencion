@@ -126,7 +126,6 @@ namespace MantencionCLA
 
         private void frm_mant_basico_Load(object sender, EventArgs e)
         {
-            String titulo;
             if (nombre_tabla.Contains('_'))
             {
                 int a = nombre_tabla.IndexOf('_') + 1;
@@ -204,6 +203,24 @@ namespace MantencionCLA
             {
                 util.setEstadoMantencion(null);
             }
+            else if (util.getFecha() != null)
+            {
+                util.setFecha(null);
+            }
+            else if (util.getControl() != null)
+            {
+                util.setControl(null);
+            }
+        }
+
+        private void txt_descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String cadena = "abcdefghijklmnñopqrstuvwxyz";
+            cadena += "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+            cadena += "áéíóúÁÉÍÓÚüÇç";
+            cadena += "0123456789";
+            cadena += "-";
+            e.Handled = aux.valida_teclas(cadena, e);
         }
     }
 }

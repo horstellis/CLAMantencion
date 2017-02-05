@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mant_usuarios));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,8 +46,10 @@
             this.opt_activo = new System.Windows.Forms.RadioButton();
             this.dat_usuarios = new System.Windows.Forms.DataGridView();
             this.cmd_ver_clave = new System.Windows.Forms.Button();
+            this.tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.cmd_eliminar = new System.Windows.Forms.Button();
             this.cmd_insertar = new System.Windows.Forms.Button();
+            this.cmd_imprimir = new System.Windows.Forms.Button();
             this.cmd_nuevo = new System.Windows.Forms.Button();
             this.fra_permisos.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,26 +87,35 @@
             // 
             this.txt_usuario.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_usuario.Location = new System.Drawing.Point(119, 9);
+            this.txt_usuario.MaxLength = 20;
             this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.ShortcutsEnabled = false;
             this.txt_usuario.Size = new System.Drawing.Size(240, 23);
             this.txt_usuario.TabIndex = 1;
+            this.txt_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuario_KeyPress);
             // 
             // txt_clave
             // 
             this.txt_clave.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_clave.Location = new System.Drawing.Point(119, 35);
+            this.txt_clave.MaxLength = 10;
             this.txt_clave.Name = "txt_clave";
+            this.txt_clave.ShortcutsEnabled = false;
             this.txt_clave.Size = new System.Drawing.Size(216, 23);
             this.txt_clave.TabIndex = 1;
             this.txt_clave.UseSystemPasswordChar = true;
+            this.txt_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clave_KeyPress);
             // 
             // txt_nombre
             // 
             this.txt_nombre.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre.Location = new System.Drawing.Point(119, 61);
+            this.txt_nombre.MaxLength = 100;
             this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.ShortcutsEnabled = false;
             this.txt_nombre.Size = new System.Drawing.Size(240, 23);
             this.txt_nombre.TabIndex = 1;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // fra_permisos
             // 
@@ -111,9 +123,9 @@
             this.fra_permisos.Controls.Add(this.opt_usuario);
             this.fra_permisos.Controls.Add(this.opt_admin);
             this.fra_permisos.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fra_permisos.Location = new System.Drawing.Point(15, 90);
+            this.fra_permisos.Location = new System.Drawing.Point(12, 90);
             this.fra_permisos.Name = "fra_permisos";
-            this.fra_permisos.Size = new System.Drawing.Size(344, 49);
+            this.fra_permisos.Size = new System.Drawing.Size(347, 49);
             this.fra_permisos.TabIndex = 2;
             this.fra_permisos.TabStop = false;
             this.fra_permisos.Text = "Permisos del Usuario";
@@ -160,9 +172,9 @@
             this.groupBox1.Controls.Add(this.opt_inactivo);
             this.groupBox1.Controls.Add(this.opt_activo);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 145);
+            this.groupBox1.Location = new System.Drawing.Point(12, 145);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(344, 49);
+            this.groupBox1.Size = new System.Drawing.Size(347, 49);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado del Usuario";
@@ -210,12 +222,13 @@
             this.dat_usuarios.AllowUserToResizeColumns = false;
             this.dat_usuarios.AllowUserToResizeRows = false;
             this.dat_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dat_usuarios.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dat_usuarios.BackgroundColor = System.Drawing.Color.Snow;
             this.dat_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dat_usuarios.Location = new System.Drawing.Point(366, 9);
+            this.dat_usuarios.GridColor = System.Drawing.Color.Snow;
+            this.dat_usuarios.Location = new System.Drawing.Point(12, 200);
             this.dat_usuarios.Name = "dat_usuarios";
             this.dat_usuarios.RowHeadersVisible = false;
-            this.dat_usuarios.Size = new System.Drawing.Size(358, 248);
+            this.dat_usuarios.Size = new System.Drawing.Size(347, 248);
             this.dat_usuarios.TabIndex = 28;
             this.dat_usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dat_usuarios_CellClick);
             // 
@@ -224,7 +237,8 @@
             this.cmd_ver_clave.BackColor = System.Drawing.Color.Transparent;
             this.cmd_ver_clave.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.cmd_ver_clave.FlatAppearance.BorderSize = 0;
-            this.cmd_ver_clave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightBlue;
+            this.cmd_ver_clave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_ver_clave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.cmd_ver_clave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_ver_clave.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_ver_clave.Location = new System.Drawing.Point(341, 37);
@@ -239,41 +253,65 @@
             // 
             // cmd_eliminar
             // 
-            this.cmd_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_eliminar.Image")));
-            this.cmd_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmd_eliminar.Location = new System.Drawing.Point(135, 200);
+            this.cmd_eliminar.FlatAppearance.BorderSize = 0;
+            this.cmd_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_eliminar.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Delete_48px;
+            this.cmd_eliminar.Location = new System.Drawing.Point(365, 75);
             this.cmd_eliminar.Name = "cmd_eliminar";
-            this.cmd_eliminar.Size = new System.Drawing.Size(103, 60);
+            this.cmd_eliminar.Size = new System.Drawing.Size(60, 60);
             this.cmd_eliminar.TabIndex = 25;
-            this.cmd_eliminar.Text = "&Eliminar";
             this.cmd_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_eliminar, "Eliminar usuario");
             this.cmd_eliminar.UseVisualStyleBackColor = true;
             this.cmd_eliminar.Click += new System.EventHandler(this.cmd_eliminar_Click);
             // 
             // cmd_insertar
             // 
+            this.cmd_insertar.FlatAppearance.BorderSize = 0;
+            this.cmd_insertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_insertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_insertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_insertar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd_insertar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_insertar.Image")));
-            this.cmd_insertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmd_insertar.Location = new System.Drawing.Point(15, 200);
+            this.cmd_insertar.Image = global::MantencionCLA.Properties.Resources.Gnome_Media_Floppy_48px;
+            this.cmd_insertar.Location = new System.Drawing.Point(365, 9);
             this.cmd_insertar.Name = "cmd_insertar";
-            this.cmd_insertar.Size = new System.Drawing.Size(103, 60);
+            this.cmd_insertar.Size = new System.Drawing.Size(60, 60);
             this.cmd_insertar.TabIndex = 26;
-            this.cmd_insertar.Text = "&Agregar\r\nActualizar";
             this.cmd_insertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_insertar, "Agregar o actualizar usuario");
             this.cmd_insertar.UseVisualStyleBackColor = true;
             this.cmd_insertar.Click += new System.EventHandler(this.cmd_insertar_Click);
             // 
+            // cmd_imprimir
+            // 
+            this.cmd_imprimir.FlatAppearance.BorderSize = 0;
+            this.cmd_imprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_imprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_imprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_imprimir.Image = global::MantencionCLA.Properties.Resources._48px_Gnome_document_print_svg;
+            this.cmd_imprimir.Location = new System.Drawing.Point(365, 207);
+            this.cmd_imprimir.Name = "cmd_imprimir";
+            this.cmd_imprimir.Size = new System.Drawing.Size(60, 60);
+            this.cmd_imprimir.TabIndex = 27;
+            this.cmd_imprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cmd_imprimir.UseVisualStyleBackColor = true;
+            this.cmd_imprimir.Click += new System.EventHandler(this.cmd_imprimir_Click);
+            // 
             // cmd_nuevo
             // 
-            this.cmd_nuevo.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Clear;
-            this.cmd_nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cmd_nuevo.Location = new System.Drawing.Point(255, 200);
+            this.cmd_nuevo.FlatAppearance.BorderSize = 0;
+            this.cmd_nuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_nuevo.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Clear_48px;
+            this.cmd_nuevo.Location = new System.Drawing.Point(365, 141);
             this.cmd_nuevo.Name = "cmd_nuevo";
-            this.cmd_nuevo.Size = new System.Drawing.Size(103, 60);
+            this.cmd_nuevo.Size = new System.Drawing.Size(60, 60);
             this.cmd_nuevo.TabIndex = 27;
-            this.cmd_nuevo.Text = "&Limpiar";
             this.cmd_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_nuevo, "Limpiar campos");
             this.cmd_nuevo.UseVisualStyleBackColor = true;
             this.cmd_nuevo.Click += new System.EventHandler(this.cmd_nuevo_Click);
             // 
@@ -281,11 +319,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 269);
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(436, 453);
             this.Controls.Add(this.cmd_ver_clave);
             this.Controls.Add(this.dat_usuarios);
             this.Controls.Add(this.cmd_eliminar);
             this.Controls.Add(this.cmd_insertar);
+            this.Controls.Add(this.cmd_imprimir);
             this.Controls.Add(this.cmd_nuevo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.fra_permisos);
@@ -295,8 +335,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_mant_usuarios";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -333,5 +375,7 @@
         private System.Windows.Forms.RadioButton opt_usuario;
         private System.Windows.Forms.RadioButton opt_bloqueado;
         private System.Windows.Forms.Button cmd_ver_clave;
+        private System.Windows.Forms.ToolTip tooltip;
+        private System.Windows.Forms.Button cmd_imprimir;
     }
 }

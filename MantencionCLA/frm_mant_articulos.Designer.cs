@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mant_articulos));
+            this.components = new System.ComponentModel.Container();
             this.dat_articulo = new System.Windows.Forms.DataGridView();
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tooltip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dat_articulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,9 @@
             this.dat_articulo.AllowUserToResizeColumns = false;
             this.dat_articulo.AllowUserToResizeRows = false;
             this.dat_articulo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dat_articulo.BackgroundColor = System.Drawing.Color.Snow;
             this.dat_articulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dat_articulo.GridColor = System.Drawing.Color.Snow;
             this.dat_articulo.Location = new System.Drawing.Point(12, 115);
             this.dat_articulo.Name = "dat_articulo";
             this.dat_articulo.ReadOnly = true;
@@ -83,41 +86,53 @@
             // 
             // cmd_eliminar
             // 
-            this.cmd_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_eliminar.Image")));
+            this.cmd_eliminar.FlatAppearance.BorderSize = 0;
+            this.cmd_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_eliminar.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Delete_48px;
             this.cmd_eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmd_eliminar.Location = new System.Drawing.Point(362, 79);
             this.cmd_eliminar.Name = "cmd_eliminar";
-            this.cmd_eliminar.Size = new System.Drawing.Size(103, 60);
+            this.cmd_eliminar.Size = new System.Drawing.Size(60, 60);
             this.cmd_eliminar.TabIndex = 38;
-            this.cmd_eliminar.Text = "&Eliminar";
             this.cmd_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_eliminar, "Eliminar articulo");
             this.cmd_eliminar.UseVisualStyleBackColor = true;
             this.cmd_eliminar.Click += new System.EventHandler(this.cmd_eliminar_Click);
             // 
             // cmd_insertar
             // 
+            this.cmd_insertar.FlatAppearance.BorderSize = 0;
+            this.cmd_insertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_insertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_insertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_insertar.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd_insertar.Image = ((System.Drawing.Image)(resources.GetObject("cmd_insertar.Image")));
+            this.cmd_insertar.Image = global::MantencionCLA.Properties.Resources.Gnome_Media_Floppy_48px;
             this.cmd_insertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmd_insertar.Location = new System.Drawing.Point(362, 13);
             this.cmd_insertar.Name = "cmd_insertar";
-            this.cmd_insertar.Size = new System.Drawing.Size(103, 60);
+            this.cmd_insertar.Size = new System.Drawing.Size(60, 60);
             this.cmd_insertar.TabIndex = 39;
-            this.cmd_insertar.Text = "&Agregar\r\nActualizar";
             this.cmd_insertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_insertar, "Agregar o actualizar articulo");
             this.cmd_insertar.UseVisualStyleBackColor = true;
             this.cmd_insertar.Click += new System.EventHandler(this.cmd_insertar_Click);
             // 
             // cmd_nuevo
             // 
-            this.cmd_nuevo.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Clear;
+            this.cmd_nuevo.FlatAppearance.BorderSize = 0;
+            this.cmd_nuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.cmd_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.cmd_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_nuevo.Image = global::MantencionCLA.Properties.Resources.Gnome_Edit_Clear_48px;
             this.cmd_nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cmd_nuevo.Location = new System.Drawing.Point(362, 145);
             this.cmd_nuevo.Name = "cmd_nuevo";
-            this.cmd_nuevo.Size = new System.Drawing.Size(103, 60);
+            this.cmd_nuevo.Size = new System.Drawing.Size(60, 60);
             this.cmd_nuevo.TabIndex = 40;
-            this.cmd_nuevo.Text = "&Limpiar";
             this.cmd_nuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tooltip.SetToolTip(this.cmd_nuevo, "Limpiar los campos");
             this.cmd_nuevo.UseVisualStyleBackColor = true;
             this.cmd_nuevo.Click += new System.EventHandler(this.cmd_nuevo_Click);
             // 
@@ -165,7 +180,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 346);
+            this.BackColor = System.Drawing.Color.Snow;
+            this.ClientSize = new System.Drawing.Size(430, 346);
             this.Controls.Add(this.txt_cantidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dat_articulo);
@@ -176,6 +192,9 @@
             this.Controls.Add(this.cmd_nuevo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_mant_articulos";
             this.Text = "Mantenedor Articulos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_mant_articulos_FormClosing);
@@ -198,5 +217,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip tooltip;
     }
 }

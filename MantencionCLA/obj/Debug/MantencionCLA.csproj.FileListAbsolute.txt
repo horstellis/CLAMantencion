@@ -17,3 +17,15 @@ D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA
 D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_mant_responsable.resources
 D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_mant_articulos.resources
 D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_mantencion.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_articulos_mantencion.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_especial1.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_especial2.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_imprimir.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\RdlCompile.cache
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\RdlCompile.compiled
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_imprimir_solicitud.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_listar_solicitudes.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_imprimir_actividades.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_rep_buscar.resources
+D:\Horst Ellis\Documents\Visual Studio 2013\Projects\MantencionCLA\MantencionCLA\obj\Debug\MantencionCLA.frm_ranking_responsables.resources

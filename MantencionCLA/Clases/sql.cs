@@ -77,6 +77,26 @@ namespace MantencionCLA
             }
         }
 
+        public int contar(String tabla, String condicion)
+        {
+            try
+            {
+                String query = "SELECT COUNT(*) FROM " + tabla;
+                if (!condicion.Equals(""))
+                {
+                    query += " WHERE " + condicion;
+                }
+                SqlDataReader r = consulta(query);
+                r.Read();
+                return r.GetInt32(0);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error inesperado. Favor avise a un administrador e indiquele:\n" + ex.Message, "Clase SQL - Contar");
+                return -1;
+            }
+        }
+
         public int ejecutar(String sentencia)
         {
             /*
@@ -162,6 +182,56 @@ namespace MantencionCLA
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio un error inesperado. Favor avise a un administrador e indiquele:\n" + ex.Message, "Clase SQL - Llenar Combo");
+                return false;
+            }
+        }
+
+        public Boolean llenar_lista(CheckedListBox lst, String sentencia, String tabla, String visible, String invisible)
+        {
+            try
+            {
+                desconectar();
+                conectar();
+                SqlDataAdapter adapt = new SqlDataAdapter(sentencia, con);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, tabla);
+                lst.DataSource = ds.Tables[0].DefaultView;
+                lst.DisplayMember = visible;
+                lst.ValueMember = visible;
+                desconectar();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error inesperado. Favor avise a un administrador e indiquele:\n" + ex.Message, "Clase SQL - Llenar Lista");
+                return false;
+            }
+        }
+
+        public Boolean llenar_vista(ListView lsv, String sentencia, String tabla, String visible, String invisible)
+        {
+            try
+            {
+                desconectar();
+                conectar();
+                SqlDataAdapter adapt = new SqlDataAdapter(sentencia, con);
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
+                adapt.Fill(ds);
+                dt = ds.Tables[0];
+                lsv.Items.Clear();
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    DataRow fila = ds.Tables[0].Rows[i];
+                    ListViewItem elementos = new ListViewItem(fila[1].ToString());
+                    elementos.SubItems.Add(fila[2].ToString());
+                    lsv.Items.Add(elementos);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error inesperado. Favor avise a un administrador e indiquele:\n" + ex.Message, "Clase SQL - Llenar Lista");
                 return false;
             }
         }

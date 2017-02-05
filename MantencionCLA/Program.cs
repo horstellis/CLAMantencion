@@ -17,6 +17,7 @@ namespace MantencionCLA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frm_login());
+            //Application.Run(new frm_mantencion());
             //Application.Run(new frm_mant_articulos());
         }
     }

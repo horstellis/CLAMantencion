@@ -80,6 +80,35 @@ namespace MantencionCLA
             }
         }
 
+        public Boolean valida_user(KeyPressEventArgs e)
+        {
+            String cadena = "abcdefghijklmnopqrstuvwxyz";
+            cadena += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            cadena += ".";
+            if (cadena.Contains(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public Boolean valida_pass(KeyPressEventArgs e)
+        {
+            String cadena = "abcdefghijklmnopqrstuvwxyz";
+            cadena += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            cadena += "0123456789";
+            if (cadena.Contains(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public void cambia_tecla(KeyPressEventArgs e)
         {
             //Metodo que permite cambiar Enter por TAB
@@ -90,5 +119,29 @@ namespace MantencionCLA
             }
         }
 
+        //public DateTime numero_fecha(int numero)
+        //{
+        //    String strNum = numero.ToString();
+        //    int dia, mes, anio;
+
+        //    DateTime fecha = DateTime.Now;
+
+        //    try
+        //    {
+        //        //If date is not in valid format 
+        //        if (strNum.Length == 7) strNum = "0" + strNum;
+        //        mes = Convert.ToInt32(strNum.Substring(0, 2));
+        //        dia = Convert.ToInt32(strNum.Substring(2, 2));
+        //        anio = Convert.ToInt32(strNum.Substring(4, 4));
+        //        fecha = new DateTime(anio, mes, dia);
+        //    }
+
+        //    catch (Exception Ex)
+        //    {
+        //        //Ex.Message
+        //    }
+
+        //    return fecha;
+        //}
     }
 }

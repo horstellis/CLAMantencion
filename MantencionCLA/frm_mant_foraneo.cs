@@ -238,7 +238,7 @@ namespace MantencionCLA
             cadena += "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
             cadena += "áéíóúÁÉÍÓÚüÇç";
             cadena += "0123456789";
-            cadena += ",.-";
+            cadena += "-";
             e.Handled = aux.valida_teclas(cadena, e);
         }
     }

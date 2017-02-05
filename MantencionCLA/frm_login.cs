@@ -167,8 +167,8 @@ namespace MantencionCLA
 
         private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
         {
+            e.Handled = aux.valida_user(e);
             aux.cambia_tecla(e);
-            e.Handled = aux.valida_teclas(e, 2);
         }
 
         private void frm_login_FormClosing(object sender, FormClosingEventArgs e)
@@ -178,7 +178,7 @@ namespace MantencionCLA
 
         private void txt_password_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = aux.valida_teclas(e, 3);
+            e.Handled = aux.valida_pass(e);
             if (e.KeyChar == '\r')
             {
                 btn_ingresar.PerformClick();
